@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Bitter|Merriweather|Roboto+Slab|Rubik|Source+Sans+Pro|Ubuntu&display=swap");
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 5rem;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

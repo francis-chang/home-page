@@ -1,21 +1,37 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled, { createGlobalStyle } from "styled-components"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const Global = createGlobalStyle`
+
+  body{
+    background-color: #2a2c33;
+    color: #d5d7dd;
+  }
+  h1{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 900;
+  }
+  h3, p{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 500;
+  }
+`
+
+const Container = styled.div`
+  padding-left: 3rem;
+`
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <Container>
+    <Global />
+    <h1>francis chang</h1>
+    <h3>i do web stuff in python & typescript, data visuals with d3</h3>
+
+    <p>touched down in '92</p>
+    <p>taiwanese-korean-american</p>
+    <p>born in california, raised in texas</p>
+    <p>i enjoy listening to stephen a and max in the morning</p>
+  </Container>
 )
 
 export default IndexPage
