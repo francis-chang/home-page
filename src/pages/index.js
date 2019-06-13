@@ -5,7 +5,8 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { animated, useSpring } from "react-spring"
 import styled, { createGlobalStyle } from "styled-components"
 
 library.add(faYoutube, faTwitter, faGithub)
@@ -16,14 +17,6 @@ const Global = createGlobalStyle`
     background-color: #2a2c33;
     color: #d5d7dd;
     
-  }
-  h1{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 900;
-  }
-  h3, p{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 500;
   }
 `
 
@@ -72,6 +65,8 @@ const Subtitle = styled.div`
   }
 `
 const Listing = styled.div`
+  overflow: hidden;
+  position: relative;
   padding: 0.8rem 0.5rem;
   font-size: 1.3rem;
   @media only screen and (max-width: 910px) {
@@ -86,6 +81,11 @@ const Listing = styled.div`
     margin: 0 auto;
   }
 `
+
+const LastLasting = styled.div`
+  cursor: pointer;
+`
+
 const Button = styled.button`
   cursor: pointer;
   width: 10rem;
@@ -151,39 +151,75 @@ const Icon = styled.div`
   }
 `
 
-const IndexPage = () => (
-  <Container>
-    <Global />
-    <ConContainer>
-      <Title>francis chang (zfc9d3f)</Title>
-      <Subtitle>i do web stuff in python, typescript & d3</Subtitle>
+const UL = styled.ul`
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+`
 
-      <Listing>touched down in '92</Listing>
-      <Listing>taiwanese korean american</Listing>
-      <Listing>born in california, raised in texas</Listing>
-      <Listing>i enjoy listening to stephen a and max in the morning</Listing>
-      <ButtonContainer>
-        <Button color="#ffc970">
-          <Icon color="#bfbfbf">
-            <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
-          </Icon>
-          <ButtonText>github</ButtonText>
-        </Button>
-        <Button color="#ffc970">
-          <Icon color="#1dcaff">
-            <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
-          </Icon>
-          <ButtonText>twitter</ButtonText>
-        </Button>
-        <Button color="#ffc970">
-          <Icon color="#ff3333">
-            <FontAwesomeIcon icon={["fab", "youtube"]}></FontAwesomeIcon>
-          </Icon>
-          <ButtonText>youtube</ButtonText>
-        </Button>
-      </ButtonContainer>
-    </ConContainer>
-  </Container>
-)
+const LI = styled.li``
+
+const IndexPage = () => {
+  const [toggle, setToggle] = useState(false)
+
+  const animatedProps = useSpring({
+    height: toggle ? "20rem" : "0rem",
+    overflow: "hidden",
+  })
+
+  useEffect(() => {
+    console.log(toggle)
+  })
+  return (
+    <Container>
+      <Global />
+      <ConContainer>
+        <Title>francis chang (zfc9d3f)</Title>
+        <Subtitle>i do web stuff in python, typescript and d3</Subtitle>
+        <Listing>touched down in '92</Listing>
+        <Listing>taiwanese korean american</Listing>
+        <Listing>born in california, raised in texas</Listing>
+        <Listing>i enjoy listening to stephen a and max in the morning</Listing>
+        <Listing>
+          <LastLasting onClick={() => setToggle(!toggle)}>
+            i like art. click for a list of my favorite artists
+          </LastLasting>
+          <animated.div style={animatedProps}>
+            <UL>
+              <LI>aw anqi</LI>
+              <LI>ching yeh</LI>
+              <LI>pablo hurtado de mendoza</LI>
+              <LI>n kayurova</LI>
+              <LI>wei feng</LI>
+              <LI>g liulian</LI>
+              <LI>chun lo</LI>
+              <LI>sachin teng</LI>
+            </UL>
+          </animated.div>
+        </Listing>
+        <ButtonContainer>
+          <Button color="#ffc970">
+            <Icon color="#bfbfbf">
+              <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
+            </Icon>
+            <ButtonText>github</ButtonText>
+          </Button>
+          <Button color="#ffc970">
+            <Icon color="#1dcaff">
+              <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
+            </Icon>
+            <ButtonText>twitter</ButtonText>
+          </Button>
+          <Button color="#ffc970">
+            <Icon color="#ff3333">
+              <FontAwesomeIcon icon={["fab", "youtube"]}></FontAwesomeIcon>
+            </Icon>
+            <ButtonText>youtube</ButtonText>
+          </Button>
+        </ButtonContainer>
+      </ConContainer>
+    </Container>
+  )
+}
 
 export default IndexPage
