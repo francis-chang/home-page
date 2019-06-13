@@ -5,7 +5,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { animated, useSpring } from "react-spring"
 import styled, { createGlobalStyle } from "styled-components"
 
@@ -16,7 +16,6 @@ const Global = createGlobalStyle`
   body{
     background-color: #2a2c33;
     color: #d5d7dd;
-  
   }
 `
 
@@ -29,7 +28,6 @@ const Container = styled.div`
 `
 const ConContainer = styled.div`
   padding-top: 2rem;
-  max-width: 1000px;
   @media only screen and (max-width: 900px) {
     padding-top: 1.3rem;
   }
@@ -37,6 +35,7 @@ const ConContainer = styled.div`
 const Title = styled.div`
   padding: 0.5rem;
   margin-bottom: 0.3rem;
+  text-align: center;
 
   font-size: 3rem;
   color: #ffc970;
@@ -56,13 +55,13 @@ const Subtitle = styled.div`
   padding: 0.5rem;
   color: #ffc970;
   border-bottom: 3px solid #ffc970;
+  text-align: center;
   margin-bottom: 0.5rem;
   @media only screen and (max-width: 910px) {
     font-size: 1.4rem;
   }
   @media only screen and (max-width: 800px) {
     font-size: 1.2rem;
-    text-align: center;
   }
 `
 const Listing = styled.div`
@@ -77,9 +76,7 @@ const Listing = styled.div`
   @media only screen and (max-width: 800px) {
     font-size: 1.1rem;
     padding: 0.3rem;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
+    padding-left: 1.5rem;
   }
 `
 
@@ -101,10 +98,6 @@ const Button = styled.button`
   &:hover {
     transition-duration: 250ms;
     color: ${p => p.color};
-    border: 3px solid ${p => p.color};
-  }
-  &:not(:last-child) {
-    margin-right: 1.5rem;
   }
 
   @media only screen and (max-width: 910px) {
@@ -114,8 +107,7 @@ const Button = styled.button`
   @media only screen and (max-width: 800px) {
     padding: 0.3rem 0.5rem;
     &:not(:last-child) {
-      margin-right: 0rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
   }
 `
@@ -124,8 +116,9 @@ const ButtonContainer = styled.div`
   padding-left: 0.5rem;
   margin-top: 1rem;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-
+  width: 100%;
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     justify-content: center;
@@ -172,21 +165,17 @@ const IndexPage = () => {
     overflow: "hidden",
   })
 
-  useEffect(() => {
-    console.log(toggle)
-  })
   return (
     <Container>
       <Global />
       <ConContainer>
         <Title>francis chang (zfc9d3f)</Title>
-        <Subtitle>i do web stuff in python, typescript and d3</Subtitle>
-        <Listing>touched down '92 in california, raised in texas</Listing>
+        <Subtitle>i do web stuff in python, typescript & d3</Subtitle>
         <Listing>taiwanese korean american</Listing>
-        <Listing>i enjoy listening to stephen a and max in the morning</Listing>
+        <Listing>touched down '92 in california, raised in texas</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
-            i like art. click for a list of my favorite artists
+            art fan. click to see my favorite artists
           </LastLasting>
           <animated.div style={animatedProps}>
             <YouEll>
