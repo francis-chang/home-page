@@ -82,6 +82,7 @@ const Listing = styled.div`
 
 const LastLasting = styled.div`
   cursor: pointer;
+  user-select: none;
 `
 
 const Button = styled.button`
@@ -98,6 +99,9 @@ const Button = styled.button`
   &:hover {
     transition-duration: 250ms;
     color: ${p => p.color};
+  }
+  &:focus {
+    outline: 0;
   }
 
   @media only screen and (max-width: 910px) {
@@ -148,20 +152,32 @@ const Icon = styled.div`
   }
 `
 
-const YouEll = styled.div`
+const ArtistContainer = styled.div`
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 `
 
-const EllEye = styled.div`
+const ArtistLink = styled.a`
+  cursor: pointer;
   padding: 0.5rem;
+  text-decoration: none;
+  &:active,
+  :visited {
+    color: #d5d7dd;
+  }
+  &:hover {
+    color: #ffc970;
+    text-decoration: underline;
+    transition-duration: 250ms;
+  }
 `
 
 const IndexPage = () => {
   const [toggle, setToggle] = useState(false)
 
   const animatedProps = useSpring({
-    height: toggle ? "24rem" : "0rem",
+    height: toggle ? "27rem" : "0rem",
     overflow: "hidden",
   })
 
@@ -175,21 +191,78 @@ const IndexPage = () => {
         <Listing>touched down '92 in california, raised in texas</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
-            art fan. click to see my favorite artists
+            art fan. click to see who i like
           </LastLasting>
           <animated.div style={animatedProps}>
-            <YouEll>
-              <EllEye>andreas rocha</EllEye>
-              <EllEye>aw anqi</EllEye>
-              <EllEye>ching yeh</EllEye>
-              <EllEye>g liulian</EllEye>
-              <EllEye>icky h</EllEye>
-              <EllEye>jakub rebelka</EllEye>
-              <EllEye>micaela dawn</EllEye>
-              <EllEye>pablo hurtado de mendoza</EllEye>
-              <EllEye>sachin teng</EllEye>
-              <EllEye>svetlana dmitrieva</EllEye>
-            </YouEll>
+            <ArtistContainer>
+              <ArtistLink
+                href="https://www.artstation.com/andreasrocha"
+                target="_blank"
+              >
+                andreas rocha
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/awanqi"
+                target="_blank"
+              >
+                aw anqi
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/chingyeh"
+                target="_blank"
+              >
+                ching yeh
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/chunlo"
+                target="_blank"
+              >
+                chun lo
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/gliulian"
+                target="_blank"
+              >
+                g liulian
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.instagram.com/michal_sawtyruk/?hl=en"
+                target="_blank"
+              >
+                michal sawtyruk
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/powl"
+                target="_blank"
+              >
+                pablo hurtado de mendoza
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.instagram.com/punziella/?hl=en"
+                target="_blank"
+              >
+                pauline (punziella)
+              </ArtistLink>
+
+              <ArtistLink
+                href="https://www.instagram.com/sachinteng/?hl=en"
+                target="_blank"
+              >
+                sachin teng
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.instagram.com/sinixdesign/?hl=en"
+                target="_blank"
+              >
+                sinix
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/mayadim1926"
+                target="_blank"
+              >
+                svetlana dmitrieva
+              </ArtistLink>
+            </ArtistContainer>
           </animated.div>
         </Listing>
         <ButtonContainer>
