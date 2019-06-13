@@ -1,11 +1,21 @@
+import { library } from "@fortawesome/fontawesome-svg-core"
+import {
+  faGithub,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
+library.add(faYoutube, faTwitter, faGithub)
+
 const Global = createGlobalStyle`
+
   body{
     background-color: #2a2c33;
     color: #d5d7dd;
-
+    
   }
   h1{
     font-family: 'Merriweather Sans', sans-serif;
@@ -22,6 +32,7 @@ const Container = styled.div`
   justify-content: center;
   font-family: "Ubuntu Mono", sans-serif;
   font-weight: 600;
+  margin-bottom: 4rem;
 `
 const ConContainer = styled.div`
   padding-top: 2rem;
@@ -32,18 +43,24 @@ const ConContainer = styled.div`
 `
 const Title = styled.div`
   padding: 0.5rem;
+  margin-bottom: 0.3rem;
+
   font-size: 3rem;
   color: #ffc970;
   @media only screen and (max-width: 910px) {
     font-size: 2.7rem;
   }
   @media only screen and (max-width: 800px) {
+    font-size: 2.3rem;
     text-align: center;
+  }
+  @media only screen and (max-width: 550px) {
+    line-height: 2.5rem;
   }
 `
 const Subtitle = styled.div`
   font-size: 1.6rem;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   color: #ffc970;
   border-bottom: 3px solid #ffc970;
   @media only screen and (max-width: 910px) {
@@ -55,26 +72,30 @@ const Subtitle = styled.div`
   }
 `
 const Listing = styled.div`
-  padding: 1rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   font-size: 1.3rem;
   @media only screen and (max-width: 910px) {
     font-size: 1.2rem;
-    padding: 0.7rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
   @media only screen and (max-width: 800px) {
     font-size: 1.1rem;
-    padding: 0.5rem;
+    padding: 0.3rem;
     text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 `
 const Button = styled.button`
   cursor: pointer;
+  width: 10rem;
   color: #d5d7dd;
   background-color: #2a2c33;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 4px;
-  font-size: 1.4rem;
   border: 3px solid #d5d7dd;
+  display: flex;
+  justify-content: space-around;
   &:hover {
     transition-duration: 250ms;
     color: ${p => p.color};
@@ -85,27 +106,48 @@ const Button = styled.button`
   }
 
   @media only screen and (max-width: 910px) {
-    font-size: 1.2rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.8rem;
   }
+
   @media only screen and (max-width: 800px) {
-    font-size: 1rem;
     padding: 0.3rem 0.5rem;
     &:not(:last-child) {
       margin-right: 0rem;
+      margin-bottom: 0.5rem;
     }
   }
 `
 
 const ButtonContainer = styled.div`
-  margin-top: 10rem;
+  padding-left: 0.5rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
 
   @media only screen and (max-width: 800px) {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 1rem;
+  }
+`
+
+const ButtonText = styled.div`
+  padding: 0rem 0.3rem;
+  font-size: 1.3rem;
+  @media only screen and (max-width: 910px) {
+    font-size: 1.2rem;
+  }
+  @media only screen and (max-width: 800px) {
+    font-size: 1rem;
+  }
+`
+
+const Icon = styled.div`
+  padding: 0rem 0.3rem;
+  font-size: 1.5rem;
+  color: ${p => p.color};
+  @media only screen and (max-width: 800px) {
+    font-size: 1.3rem;
   }
 `
 
@@ -113,19 +155,32 @@ const IndexPage = () => (
   <Container>
     <Global />
     <ConContainer>
-      <Title>francis chang</Title>
-      <Subtitle>
-        i do web stuff in python & typescript, data visuals with d3
-      </Subtitle>
+      <Title>francis chang (zfc9d3f)</Title>
+      <Subtitle>i do web stuff in python, typescript & d3</Subtitle>
 
       <Listing>touched down in '92</Listing>
-      <Listing>taiwanese-korean-american</Listing>
+      <Listing>taiwanese korean american</Listing>
       <Listing>born in california, raised in texas</Listing>
       <Listing>i enjoy listening to stephen a and max in the morning</Listing>
       <ButtonContainer>
-        <Button color="#fc9d3f">github</Button>
-        <Button color="#fc9d3f">twitter</Button>
-        <Button color="#fc9d3f">youtube</Button>
+        <Button color="#ffc970">
+          <Icon color="#bfbfbf">
+            <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
+          </Icon>
+          <ButtonText>github</ButtonText>
+        </Button>
+        <Button color="#ffc970">
+          <Icon color="#1dcaff">
+            <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
+          </Icon>
+          <ButtonText>twitter</ButtonText>
+        </Button>
+        <Button color="#ffc970">
+          <Icon color="#ff3333">
+            <FontAwesomeIcon icon={["fab", "youtube"]}></FontAwesomeIcon>
+          </Icon>
+          <ButtonText>youtube</ButtonText>
+        </Button>
       </ButtonContainer>
     </ConContainer>
   </Container>
