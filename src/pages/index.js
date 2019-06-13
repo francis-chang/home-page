@@ -16,7 +16,7 @@ const Global = createGlobalStyle`
   body{
     background-color: #2a2c33;
     color: #d5d7dd;
-    
+  
   }
 `
 
@@ -56,6 +56,7 @@ const Subtitle = styled.div`
   padding: 0.5rem;
   color: #ffc970;
   border-bottom: 3px solid #ffc970;
+  margin-bottom: 0.5rem;
   @media only screen and (max-width: 910px) {
     font-size: 1.4rem;
   }
@@ -96,6 +97,7 @@ const Button = styled.button`
   border: 3px solid #d5d7dd;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   &:hover {
     transition-duration: 250ms;
     color: ${p => p.color};
@@ -132,6 +134,8 @@ const ButtonContainer = styled.div`
 `
 
 const ButtonText = styled.div`
+  font-family: "Ubuntu Mono", sans-serif;
+  font-weight: 900;
   padding: 0rem 0.3rem;
   font-size: 1.3rem;
   @media only screen and (max-width: 910px) {
@@ -151,19 +155,20 @@ const Icon = styled.div`
   }
 `
 
-const UL = styled.ul`
-  list-style-type: none;
+const YouEll = styled.div`
   padding: 0.5rem 1rem;
   margin-top: 1rem;
 `
 
-const LI = styled.li``
+const EllEye = styled.div`
+  padding: 0.5rem;
+`
 
 const IndexPage = () => {
   const [toggle, setToggle] = useState(false)
 
   const animatedProps = useSpring({
-    height: toggle ? "20rem" : "0rem",
+    height: toggle ? "24rem" : "0rem",
     overflow: "hidden",
   })
 
@@ -176,25 +181,26 @@ const IndexPage = () => {
       <ConContainer>
         <Title>francis chang (zfc9d3f)</Title>
         <Subtitle>i do web stuff in python, typescript and d3</Subtitle>
-        <Listing>touched down in '92</Listing>
+        <Listing>touched down '92 in california, raised in texas</Listing>
         <Listing>taiwanese korean american</Listing>
-        <Listing>born in california, raised in texas</Listing>
         <Listing>i enjoy listening to stephen a and max in the morning</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
             i like art. click for a list of my favorite artists
           </LastLasting>
           <animated.div style={animatedProps}>
-            <UL>
-              <LI>aw anqi</LI>
-              <LI>ching yeh</LI>
-              <LI>pablo hurtado de mendoza</LI>
-              <LI>n kayurova</LI>
-              <LI>wei feng</LI>
-              <LI>g liulian</LI>
-              <LI>chun lo</LI>
-              <LI>sachin teng</LI>
-            </UL>
+            <YouEll>
+              <EllEye>andreas rocha</EllEye>
+              <EllEye>aw anqi</EllEye>
+              <EllEye>ching yeh</EllEye>
+              <EllEye>g liulian</EllEye>
+              <EllEye>icky h</EllEye>
+              <EllEye>jakub rebelka</EllEye>
+              <EllEye>micaela dawn</EllEye>
+              <EllEye>pablo hurtado de mendoza</EllEye>
+              <EllEye>sachin teng</EllEye>
+              <EllEye>svetlana dmitrieva</EllEye>
+            </YouEll>
           </animated.div>
         </Listing>
         <ButtonContainer>
