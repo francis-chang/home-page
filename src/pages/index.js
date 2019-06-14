@@ -4,14 +4,23 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
 import { animated, useSpring } from "react-spring"
 import styled, { createGlobalStyle } from "styled-components"
+import SEO from "../components/seo"
 
-library.add(faYoutube, faTwitter, faGithub)
+library.add(faYoutube, faTwitter, faGithub, faArrowDown)
 
 const Global = createGlobalStyle`
+  @keyframes bounce {
+    
+  }
+
+  html{
+    font-size: 100%;
+  }
 
   body{
     background-color: #2a2c33;
@@ -83,6 +92,13 @@ const Listing = styled.div`
 const LastLasting = styled.div`
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+`
+
+const ArrowDown = styled.div`
+  padding-left: 0.8rem;
+  color: #ffc970;
 `
 
 const Button = styled.button`
@@ -183,15 +199,21 @@ const IndexPage = () => {
 
   return (
     <Container>
+      <SEO title="francis chang" />
       <Global />
       <ConContainer>
         <Title>francis chang (zfc9d3f)</Title>
-        <Subtitle>i do web stuff in python, typescript & d3</Subtitle>
+        <Subtitle>i do web stuff with python & typescript</Subtitle>
+
         <Listing>taiwanese korean american</Listing>
         <Listing>touched down '92 in california, raised in texas</Listing>
+        <Listing>i enjoy listening to stephen a and max in the morning</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
-            art fan. click to see who i like
+            <div>i like art </div>
+            <ArrowDown>
+              <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+            </ArrowDown>
           </LastLasting>
           <animated.div style={animatedProps}>
             <ArtistContainer>
