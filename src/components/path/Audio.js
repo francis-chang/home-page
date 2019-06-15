@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react"
 import audio from "../../audio/make.mp3"
+import WaveForm from "./WaveForm"
 
 const Audio = ({ fullpageApi }) => {
-  const [wave, setWave] = useState(null)
   const [audioSet, setAudioSet] = useState(false)
+  const [analyser, setAnalyser] = useState(null)
   const audioRef = useRef(null)
   const initializeAudio = () => {
     let context = new AudioContext()
@@ -12,8 +13,7 @@ const Audio = ({ fullpageApi }) => {
     audioSrc.connect(analyser)
     analyser.connect(context.destination)
     analyser.fftSize = 512
-
-    setWave({})
+    setAnalyser(analyser)
   }
 
   const play = () => {
@@ -32,6 +32,7 @@ const Audio = ({ fullpageApi }) => {
     <div className="section">
       <p>Section 1 (welcome to fullpage.js)</p>
       <audio ref={audioRef} id="audioElement" src={audio} />
+      <WaveForm analyser={analyser} />
       <button onClick={play}>play</button>
       <button onClick={pause}>pause</button>
       <button onClick={() => fullpageApi.moveSectionDown()}>
