@@ -97,8 +97,9 @@ const LastLasting = styled.div`
 `
 
 const ArrowDown = styled.div`
+  font-size: 1.3rem;
   padding-left: 0.8rem;
-  color: #ffc970;
+  /* color: #ffc970; */
 `
 
 const Button = styled.button`
@@ -210,7 +211,7 @@ const IndexPage = () => {
         <Listing>i enjoy listening to stephen a and max in the morning</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
-            <div>i like art </div>
+            <div>i like these artists </div>
             <ArrowDown>
               <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
             </ArrowDown>

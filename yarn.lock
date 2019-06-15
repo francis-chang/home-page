@@ -637,7 +637,7 @@
     "@babel/helper-regex" "^7.4.4"
     regexpu-core "^4.5.4"
 
-"@babel/polyfill@^7.0.0":
+"@babel/polyfill@^7.0.0", "@babel/polyfill@^7.2.5":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.4.4.tgz#78801cf3dbe657844eeabf31c1cae3828051e893"
   integrity sha512-WlthFLfhQQhh+A2Gn5NSFl0Huxz36x86Jn+E9OW7ibK8edKPq+KLy4apM1yDpQ8kJOVi1OVjpP4vSDLdrI04dg==
@@ -807,6 +807,14 @@
   dependencies:
     humps "^2.0.1"
     prop-types "^15.5.10"
+
+"@fullpage/react-fullpage@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@fullpage/react-fullpage/-/react-fullpage-0.1.14.tgz#b248dc32c049de680fd4dc14f1893a715a809fc0"
+  integrity sha512-yAFlEtpQCCD2PDB9LCW9goPCvy3BXiE0bjgbe4Lw1oteeeywv+jmljXCodDQjWXFNcup3gGN0ZH9D7Hiq+W5HQ==
+  dependencies:
+    "@babel/polyfill" "^7.2.5"
+    fullpage.js "^3.0.5"
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.2":
   version "2.0.0-printer-fix.2"
@@ -4625,6 +4633,11 @@ fsevents@^1.2.7:
   dependencies:
     nan "^2.12.1"
     node-pre-gyp "^0.12.0"
+
+fullpage.js@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-3.0.5.tgz#ed223ec81ea354bffcac37c24c946981a1124171"
+  integrity sha512-80zJ12tqIkwNgVRnrJiP2RDy1okF9wXj5I7BDg5dsJcHCpgzb052ATCjz+3g7Zp1fjGsaDmEu1m92MafGqcO3w==
 
 function-bind@^1.0.2, function-bind@^1.1.1:
   version "1.1.1"

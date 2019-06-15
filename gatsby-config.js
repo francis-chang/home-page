@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `zfc9d3f`,
+    description: "zfc9d3f francis chang",
     author: `@zfc9d3f`,
   },
   plugins: [
@@ -26,13 +27,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `zfc9d3f hompeage`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bar.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
