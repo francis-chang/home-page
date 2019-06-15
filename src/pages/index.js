@@ -42,8 +42,6 @@ const ConContainer = styled.div`
   }
 `
 const Title = styled.div`
-  padding: 0.5rem;
-  margin-bottom: 0.3rem;
   text-align: center;
 
   font-size: 3rem;
@@ -94,6 +92,10 @@ const LastLasting = styled.div`
   user-select: none;
   display: flex;
   align-items: center;
+
+  &:hover > .arrow {
+    color: #ffc970;
+  }
 `
 
 const ArrowDown = styled.div`
@@ -212,7 +214,7 @@ const IndexPage = () => {
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
             <div>i like these artists </div>
-            <ArrowDown>
+            <ArrowDown className="arrow">
               <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
             </ArrowDown>
           </LastLasting>

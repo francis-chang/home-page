@@ -4,7 +4,7 @@ import { line } from "d3-shape"
 import React from "react"
 
 class WaveForm extends React.Component {
-  width = window.innerWidth
+  width = 600
   svgRef = React.createRef()
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class WaveForm extends React.Component {
 
     let yScale = scaleLinear()
       .domain([-1, 1])
-      .range([560, 0])
+      .range([200, 0])
 
     let musicline = line()
       .x((d, i) => xScale(i))
@@ -43,6 +43,7 @@ class WaveForm extends React.Component {
       .attr("fill", "none")
       .attr("stroke", "black")
       .attr("stroke-width", "3px")
+      .attr("stroke-linecap", "round")
 
     let renderFrame = () => {
       requestAnimationFrame(renderFrame)
@@ -60,7 +61,7 @@ class WaveForm extends React.Component {
   render() {
     return (
       <div>
-        <svg ref={this.svgRef} width={this.width} height="400px"></svg>
+        <svg ref={this.svgRef} width={this.width} height="200px"></svg>
       </div>
     )
   }

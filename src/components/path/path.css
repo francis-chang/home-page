@@ -1,0 +1,12 @@
+.container {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.item_container {
+  display: flex;
+  flex-direction: column;
+}
