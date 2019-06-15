@@ -4,10 +4,20 @@ import { line } from "d3-shape"
 import React from "react"
 
 class WaveForm extends React.Component {
-  width = 600
   svgRef = React.createRef()
+  state = {
+    width: 600,
+  }
+
+  resizeWidth = () => {
+    console.log(window.innerWidth)
+    if (window.innerWidth < 600) {
+      this.setState({ width: window.innerWidth - 50 })
+    }
+  }
 
   componentDidMount() {
+    window.addEventListener("resize", this.resizeWidth)
     this.createAudio()
   }
 
@@ -26,7 +36,7 @@ class WaveForm extends React.Component {
 
     let xScale = scaleLinear()
       .domain([0, 700])
-      .range([0, this.width])
+      .range([0, this.state.width])
 
     let yScale = scaleLinear()
       .domain([-1, 1])
@@ -61,7 +71,7 @@ class WaveForm extends React.Component {
   render() {
     return (
       <div>
-        <svg ref={this.svgRef} width={this.width} height="150px"></svg>
+        <svg ref={this.svgRef} width={this.state.width} height="150px"></svg>
       </div>
     )
   }
