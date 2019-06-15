@@ -84,6 +84,7 @@ const Listing = styled.div`
     font-size: 1.1rem;
     padding: 0.3rem;
     padding-left: 1.5rem;
+    text-align: center;
   }
 `
 
@@ -95,6 +96,9 @@ const LastLasting = styled.div`
 
   &:hover > .arrow {
     color: #ffc970;
+  }
+  @media only screen and (max-width: 800px) {
+    justify-content: center;
   }
 `
 
@@ -196,7 +200,7 @@ const IndexPage = () => {
   const [toggle, setToggle] = useState(false)
 
   const animatedProps = useSpring({
-    height: toggle ? "27rem" : "0rem",
+    height: toggle ? "26rem" : "0rem",
     overflow: "hidden",
   })
 
@@ -213,7 +217,7 @@ const IndexPage = () => {
         <Listing>i enjoy listening to stephen a and max in the morning</Listing>
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
-            <div>i like these artists </div>
+            i like these artists
             <ArrowDown className="arrow">
               <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
             </ArrowDown>

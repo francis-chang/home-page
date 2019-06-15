@@ -30,7 +30,7 @@ class WaveForm extends React.Component {
 
     let yScale = scaleLinear()
       .domain([-1, 1])
-      .range([200, 0])
+      .range([150, 0])
 
     let musicline = line()
       .x((d, i) => xScale(i))
@@ -41,7 +41,7 @@ class WaveForm extends React.Component {
       .data([array])
       .attr("d", musicline)
       .attr("fill", "none")
-      .attr("stroke", "black")
+      .attr("stroke", "#d5d7dd")
       .attr("stroke-width", "3px")
       .attr("stroke-linecap", "round")
 
@@ -61,7 +61,7 @@ class WaveForm extends React.Component {
   render() {
     return (
       <div>
-        <svg ref={this.svgRef} width={this.width} height="200px"></svg>
+        <svg ref={this.svgRef} width={this.width} height="150px"></svg>
       </div>
     )
   }

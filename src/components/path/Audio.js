@@ -1,11 +1,17 @@
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useRef, useState } from "react"
 import audio from "../../audio/make.mp3"
 import "./path.css"
 import WaveForm from "./WaveForm"
 
+library.add(faPlay, faPause)
+
 const Audio = ({ fullpageApi }) => {
   const [audioSet, setAudioSet] = useState(false)
   const [analyser, setAnalyser] = useState(null)
+  const [isPlaying, setPlaying] = useState(false)
   const audioRef = useRef(null)
 
   const initializeAudio = () => {
@@ -24,20 +30,32 @@ const Audio = ({ fullpageApi }) => {
       setAudioSet(true)
     }
     audioRef.current.play()
+    setPlaying(true)
   }
 
   const pause = () => {
     audioRef.current.pause()
+    setPlaying(false)
   }
 
   return (
     <div className="section">
       <div className="container">
         <div className="item_container">
-          <audio ref={audioRef} id="audioElement" src={audio} />
+          <audio
+            data-keepplaying
+            ref={audioRef}
+            id="audioElement"
+            src={audio}
+          />
           <WaveForm analyser={analyser} />
-          <button onClick={play}>play</button>
-          <button onClick={pause}>pause</button>
+          <button onClick={isPlaying ? pause : play} className="media_button">
+            <FontAwesomeIcon
+              className="fa-icon"
+              icon={isPlaying ? "pause" : "play"}
+              style={!isPlaying && { paddingLeft: "0.4rem" }}
+            ></FontAwesomeIcon>
+          </button>
         </div>
       </div>
     </div>
