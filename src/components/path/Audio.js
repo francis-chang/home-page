@@ -12,7 +12,9 @@ const Audio = ({ fullpageApi }) => {
   const [audioSet, setAudioSet] = useState(false)
   const [analyser, setAnalyser] = useState(null)
   const [isPlaying, setPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState("0:00")
   const audioRef = useRef(null)
+  let interval = null
 
   const initializeAudio = () => {
     let context = new AudioContext()
@@ -31,17 +33,39 @@ const Audio = ({ fullpageApi }) => {
     }
     audioRef.current.play()
     setPlaying(true)
+    interval = window.setInterval(turnToTime, 1000)
   }
 
   const pause = () => {
     audioRef.current.pause()
     setPlaying(false)
+    window.clearInterval(interval)
+  }
+
+  const turnToTime = () => {
+    if (
+      audioRef.current &&
+      audioRef.current.currentTime >= audioRef.current.duration
+    ) {
+      pause()
+      audioRef.current.currentTime = 0
+    }
+    let roundedSec = Math.round(audioRef.current.currentTime)
+    let minutes = Math.floor(roundedSec / 60)
+    let sec = roundedSec % 60
+    if (sec === 0) {
+      sec = "00"
+    } else if (sec < 10) {
+      sec = `0${sec}`
+    }
+    setCurrentTime(`${minutes}:${sec}`)
   }
 
   return (
     <div className="section">
       <div className="container">
         <div className="item_container">
+          <div className="time">{currentTime}</div>
           <audio
             data-keepplaying
             ref={audioRef}

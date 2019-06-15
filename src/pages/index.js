@@ -267,13 +267,6 @@ const IndexPage = () => {
                 pablo hurtado de mendoza
               </ArtistLink>
               <ArtistLink
-                href="https://www.instagram.com/punziella/?hl=en"
-                target="_blank"
-              >
-                pauline (punziella)
-              </ArtistLink>
-
-              <ArtistLink
                 href="https://www.instagram.com/sachinteng/?hl=en"
                 target="_blank"
               >
@@ -290,6 +283,12 @@ const IndexPage = () => {
                 target="_blank"
               >
                 svetlana dmitrieva
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.instagram.com/vacuumch_/?hl=en"
+                target="_blank"
+              >
+                vacuum chan
               </ArtistLink>
             </ArtistContainer>
           </animated.div>

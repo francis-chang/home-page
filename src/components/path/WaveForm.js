@@ -10,7 +10,6 @@ class WaveForm extends React.Component {
   }
 
   resizeWidth = () => {
-    console.log(window.innerWidth)
     if (window.innerWidth < 600) {
       this.setState({ width: window.innerWidth - 50 })
     }
@@ -52,7 +51,7 @@ class WaveForm extends React.Component {
       .attr("d", musicline)
       .attr("fill", "none")
       .attr("stroke", "#d5d7dd")
-      .attr("stroke-width", "3px")
+      .attr("stroke-width", "5px")
       .attr("stroke-linecap", "round")
 
     let renderFrame = () => {
