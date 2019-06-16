@@ -1,0 +1,17 @@
+.line-chart {
+  fill: none;
+  stroke: #d5d7dd;
+  stroke-width: 15px;
+  stroke-linecap: round;
+}
+
+.experience-container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-family: "Ubuntu Mono", sans-serif;
+  font-weight: 600;
+}

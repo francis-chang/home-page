@@ -12,6 +12,8 @@ class WaveForm extends React.Component {
   resizeWidth = () => {
     if (window.innerWidth < 600) {
       this.setState({ width: window.innerWidth - 50 })
+    } else {
+      this.setState({ width: 600 })
     }
   }
 

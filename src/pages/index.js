@@ -185,8 +185,10 @@ const ArtistLink = styled.a`
   cursor: pointer;
   padding: 0.5rem;
   text-decoration: none;
+  outline: none;
   &:active,
-  :visited {
+  &:visited,
+  &:link {
     color: #d5d7dd;
   }
   &:hover {
