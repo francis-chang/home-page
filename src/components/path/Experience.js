@@ -90,13 +90,10 @@ const Experience = ({ fullpageApi }) => {
         <svg width={width + 20} height={height}>
           <path ref={lineRef} />
         </svg>
-        <h3>Experience</h3>
         <div className="experience-list-container">
           <div className="age-listing-container">
             <div className="age">13</div>
-            <div className="listing">
-              started messing around with CSS with my xanga blog{" "}
-            </div>
+            <div className="listing">messed around with CSS on Xanga</div>
           </div>
           <div className="age-listing-container">
             <div className="age">14</div>
@@ -105,16 +102,16 @@ const Experience = ({ fullpageApi }) => {
           <div className="age-listing-container">
             <div className="age">15</div>
             <div className="listing">
-              cracked WEP keys with Backtrack 2 & 3 - now known as Kali Linux
+              cracked WEP keys with Backtrack 2 & 3 (Kali Linux)
             </div>
           </div>
           <div className="age-listing-container">
             <div className="age">16</div>
-            <div className="listing">took AP Computer Science 1 (5)</div>
+            <div className="listing">took AP Computer Science 1</div>
           </div>
           <div className="age-listing-container">
             <div className="age">17</div>
-            <div className="listing">took AP Computer Science 2 (5)</div>
+            <div className="listing">took AP Computer Science 2</div>
           </div>
           <div className="age-listing-container">
             <div className="age">18</div>
@@ -129,8 +126,7 @@ const Experience = ({ fullpageApi }) => {
           <div className="age-listing-container">
             <div className="age">20</div>
             <div className="listing">
-              built photo gallery websites initially with flash, later with
-              jquery
+              built photo gallery websites with jquery
             </div>
           </div>
           <div className="age-listing-container">
@@ -149,7 +145,10 @@ const Experience = ({ fullpageApi }) => {
           </div>
           <div className="age-listing-container">
             <div className="age">24</div>
-            <div className="listing">honed my css and react skills</div>
+            <div className="listing">
+              honed css and got comfortable with heroku, firebase, and digital
+              ocean
+            </div>
           </div>
           <div className="age-listing-container">
             <div className="age">25</div>
@@ -158,8 +157,7 @@ const Experience = ({ fullpageApi }) => {
           <div className="age-listing-container">
             <div className="age">26</div>
             <div className="listing">
-              built numerous side projects to hone my skill in the stack of
-              postgres, flask-restful, react, d3
+              built projects in postgres, flask, react, and d3
             </div>
           </div>
         </div>

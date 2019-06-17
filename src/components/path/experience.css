@@ -3,7 +3,7 @@
   stroke: #d5d7dd;
   stroke-width: 11px;
   stroke-linecap: round;
-  stroke-dasharray: 30;
+  stroke-dasharray: 20;
   stroke-dashoffset: 1000;
   animation: dash 10s linear alternate infinite;
 }
@@ -36,22 +36,42 @@ h3 {
   width: 500px;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 }
 
 .age {
   width: 3rem;
   min-width: 3rem;
   text-align: center;
-  padding: 0.3rem 0.5rem;
-  font-size: 1.5rem;
+  padding: 0.3rem 0rem;
+  font-size: 1.6rem;
+  color: #ffc970;
 }
 
 .listing {
   padding: 0.3rem 0.5rem;
   flex-grow: 1;
+  font-size: 1.1rem;
 }
 
 .age-listing-container {
   display: flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .age {
+    width: 2rem;
+    min-width: 2rem;
+    font-size: 1rem;
+  }
+  .listing {
+    font-size: 0.9rem;
+  }
+  .experience-list-container {
+    width: 95%;
+  }
+  .line-chart {
+    stroke-width: 8px;
+  }
 }
