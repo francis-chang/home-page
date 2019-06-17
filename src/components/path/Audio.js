@@ -30,6 +30,7 @@ const Audio = ({ fullpageApi }) => {
     if (!audioSet) {
       initializeAudio()
       setAudioSet(true)
+      audioRef.current.volume = 0.5
     }
     audioRef.current.play()
     setPlaying(true)

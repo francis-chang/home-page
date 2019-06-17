@@ -29,13 +29,16 @@ const points = [
 
 const Experience = ({ fullpageApi }) => {
   const [selection, setSelection] = useState(null)
+  const [width, setWidth] = useState(window.innerWidth * 0.4)
+  const [height, setHeight] = useState(150)
+
   const lineRef = useRef(null)
   const x = scaleLinear()
-    .range([0, 800])
+    .range([0, width])
     .domain([0, 20])
 
   const y = scaleLinear()
-    .range([200, 0])
+    .range([height, 0])
     .domain([0, 20])
 
   const lineChart = line()
@@ -55,15 +58,37 @@ const Experience = ({ fullpageApi }) => {
 
   useEffect(() => {
     if (!selection) {
+      if (window.innerWidth * 0.6 > 800) {
+        setWidth(800)
+      } else {
+        setWidth(window.innerWidth * 0.6)
+      }
+      if (window.innerWidth < 800) {
+        setHeight(100)
+      } else {
+        setHeight(150)
+      }
       setSelection(select(lineRef.current))
+      select(window).on("resize", () => {
+        if (window.innerWidth * 0.6 > 800) {
+          setWidth(800)
+        } else {
+          setWidth(window.innerWidth * 0.6)
+        }
+        if (window.innerWidth < 800) {
+          setHeight(100)
+        } else {
+          setHeight(200)
+        }
+      })
     }
     renderLine()
   })
   return (
     <div className="section">
       <div className="experience-container">
-        <svg width={820} height={200}>
-          <path ref={lineRef} />
+        <svg width={width + 20} height={height}>
+          <path ref={lineRef} className="path" />
         </svg>
         <p>Section 2 (welcome to fullpage.js)</p>
         <button onClick={() => fullpageApi.moveSectionDown()}>

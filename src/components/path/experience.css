@@ -1,8 +1,11 @@
 .line-chart {
   fill: none;
   stroke: #d5d7dd;
-  stroke-width: 15px;
+  stroke-width: 11px;
   stroke-linecap: round;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 1000;
+  animation: dash 10s linear alternate infinite;
 }
 
 .experience-container {
@@ -14,4 +17,13 @@
   margin: 0 auto;
   font-family: "Ubuntu Mono", sans-serif;
   font-weight: 600;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 1500;
+  }
 }
