@@ -58,10 +58,10 @@ const Experience = ({ fullpageApi }) => {
 
   useEffect(() => {
     if (!selection) {
-      if (window.innerWidth * 0.6 > 800) {
+      if (window.innerWidth * 0.8 > 800) {
         setWidth(800)
       } else {
-        setWidth(window.innerWidth * 0.6)
+        setWidth(window.innerWidth * 0.8)
       }
       if (window.innerWidth < 800) {
         setHeight(100)
@@ -70,10 +70,10 @@ const Experience = ({ fullpageApi }) => {
       }
       setSelection(select(lineRef.current))
       select(window).on("resize", () => {
-        if (window.innerWidth * 0.6 > 800) {
+        if (window.innerWidth * 0.8 > 800) {
           setWidth(800)
         } else {
-          setWidth(window.innerWidth * 0.6)
+          setWidth(window.innerWidth * 0.8)
         }
         if (window.innerWidth < 800) {
           setHeight(100)
@@ -88,12 +88,81 @@ const Experience = ({ fullpageApi }) => {
     <div className="section">
       <div className="experience-container">
         <svg width={width + 20} height={height}>
-          <path ref={lineRef} className="path" />
+          <path ref={lineRef} />
         </svg>
-        <p>Section 2 (welcome to fullpage.js)</p>
-        <button onClick={() => fullpageApi.moveSectionDown()}>
-          Click me to move down
-        </button>
+        <h3>Experience</h3>
+        <div className="experience-list-container">
+          <div className="age-listing-container">
+            <div className="age">13</div>
+            <div className="listing">
+              started messing around with CSS with my xanga blog{" "}
+            </div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">14</div>
+            <div className="listing">fell in love with ubuntu</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">15</div>
+            <div className="listing">
+              cracked WEP keys with Backtrack 2 & 3 - now known as Kali Linux
+            </div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">16</div>
+            <div className="listing">took AP Computer Science 1 (5)</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">17</div>
+            <div className="listing">took AP Computer Science 2 (5)</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">18</div>
+            <div className="listing">
+              enrolled for Computer Science in the University of Texas @ Dallas
+            </div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">19</div>
+            <div className="listing">dropped out</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">20</div>
+            <div className="listing">
+              built photo gallery websites initially with flash, later with
+              jquery
+            </div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">21</div>
+            <div className="listing">learned django</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">22</div>
+            <div className="listing">
+              learned django-rest-framework with angular 1.5
+            </div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">23</div>
+            <div className="listing">learned react and redux</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">24</div>
+            <div className="listing">honed my css and react skills</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">25</div>
+            <div className="listing">learned D3 and flask-restful</div>
+          </div>
+          <div className="age-listing-container">
+            <div className="age">26</div>
+            <div className="listing">
+              built numerous side projects to hone my skill in the stack of
+              postgres, flask-restful, react, d3
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

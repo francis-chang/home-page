@@ -27,3 +27,31 @@
     stroke-dashoffset: 1500;
   }
 }
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.experience-list-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.age {
+  width: 3rem;
+  min-width: 3rem;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.listing {
+  padding: 0.3rem 0.5rem;
+  flex-grow: 1;
+}
+
+.age-listing-container {
+  display: flex;
+  align-items: center;
+}
