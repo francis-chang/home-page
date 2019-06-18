@@ -145,10 +145,7 @@ const Experience = ({ fullpageApi }) => {
           </div>
           <div className="age-listing-container">
             <div className="age">24</div>
-            <div className="listing">
-              honed css and got comfortable with heroku, firebase, and digital
-              ocean
-            </div>
+            <div className="listing">honed css, react, and cloud skills</div>
           </div>
           <div className="age-listing-container">
             <div className="age">25</div>

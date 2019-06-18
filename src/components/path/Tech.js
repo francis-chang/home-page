@@ -3,6 +3,7 @@ import { scaleLinear } from "d3-scale"
 import { select } from "d3-selection"
 import "d3-transition"
 import React, { useEffect, useRef, useState } from "react"
+import { animated, useSpring } from "react-spring"
 import "./tech.css"
 
 let points = [
@@ -32,6 +33,9 @@ const Tech = () => {
   const barRef = useRef(null)
   const [height, setHeight] = useState(200)
   const [width, setWidth] = useState(800)
+
+  const [jsToggle, setJsToggle] = useState(false)
+  const [rToggle, setRToggle] = useState(false)
 
   const y = scaleLinear()
     .range([height, 0])
@@ -85,11 +89,41 @@ const Tech = () => {
       .attr("y", d => y(0))
       .attr("height", 0)
   }
+  const jsAniamte = useSpring({
+    height: jsToggle ? "10rem" : "0rem",
+    overflow: "hidden",
+  })
+  const rAnimate = useSpring({
+    height: rToggle ? "10rem" : "0rem",
+    overflow: "hidden",
+  })
+
+  const jsClick = () => {
+    if (rToggle) {
+      setRToggle(false)
+    }
+    setJsToggle(!jsToggle)
+  }
+
+  const rClick = () => {
+    if (jsToggle) {
+      setJsToggle(false)
+    }
+    setRToggle(!rToggle)
+  }
   return (
     <div className="section">
       <div className="tech-container">
         <svg ref={barRef}></svg>
         <div className="title">tech that i have used</div>
+        <div className="javascript" onClick={jsClick}>
+          javascript
+        </div>
+        <animated.div style={jsAniamte} />
+        <div className="react" onClick={rClick}>
+          react
+        </div>
+        <animated.div style={rAnimate} />
       </div>
     </div>
   )
