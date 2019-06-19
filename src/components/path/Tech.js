@@ -1,5 +1,5 @@
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { easeBounceOut } from "d3-ease"
 import { scaleLinear } from "d3-scale"
@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { animated, useSpring } from "react-spring"
 import "./tech.css"
 
-library.add(faArrowDown)
+library.add(faArrowDown, faArrowUp)
 
 let points = [
   2,
@@ -36,7 +36,7 @@ let points = [
 
 const Tech = () => {
   const barRef = useRef(null)
-  const [height, setHeight] = useState(200)
+  const [height, setHeight] = useState(150)
   const [width, setWidth] = useState(800)
   const [set, setSet] = useState(false)
 
@@ -44,20 +44,35 @@ const Tech = () => {
   const [rToggle, setRToggle] = useState(false)
   const [pToggle, setPToggle] = useState(false)
   const [cToggle, setCToggle] = useState(false)
+  const [resize, setResize] = useState(false)
+  const [interval, setInt] = useState(null)
 
-  const y = scaleLinear()
+  let y = scaleLinear()
     .range([height, 0])
     .domain([0, 20])
-  const x = scaleLinear()
+  let x = scaleLinear()
     .range([0, width])
     .domain([0, 20])
 
   const [selection, setSelection] = useState(null)
 
   useEffect(() => {
+    if (resize) {
+      renderChart()
+      setResize(false)
+    }
     if (!selection) {
       setSelection(select(barRef.current))
       setSet(true)
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 800) {
+          setWidth(800)
+          setResize(true)
+        } else {
+          setWidth(window.innerWidth * 0.85)
+          setResize(true)
+        }
+      })
     }
     if (set) {
       renderChart()
@@ -67,19 +82,32 @@ const Tech = () => {
 
   const renderChart = () => {
     if (selection) {
-      selection.attr("height", height).attr("width", width)
-
-      selection
-        .selectAll("rect")
-        .data(points)
-        .enter()
-        .append("rect")
+      if (interval) {
+        clearInterval(interval)
+      }
+      y = scaleLinear()
+        .range([height, 0])
+        .domain([0, 20])
+      x = scaleLinear()
+        .range([0, width])
+        .domain([0, 20])
+      setInt(setInterval(transitionBar, 4500))
       transitionBar()
-      setInterval(transitionBar, 4500)
     }
   }
 
   const transitionBar = () => {
+    selection
+      .selectAll("rect")
+      .data([])
+      .exit()
+      .remove()
+
+    selection
+      .selectAll("rect")
+      .data(points)
+      .enter()
+      .append("rect")
     selection
       .selectAll("rect")
       .data(points)
@@ -110,7 +138,7 @@ const Tech = () => {
     overflow: "hidden",
   })
   const pAnimate = useSpring({
-    height: pToggle ? "13rem" : "0rem",
+    height: pToggle ? "14.3rem" : "0rem",
     overflow: "hidden",
   })
   const cAnimate = useSpring({
@@ -172,7 +200,7 @@ const Tech = () => {
   return (
     <div className="section">
       <div className="tech-container">
-        <svg ref={barRef}></svg>
+        <svg width={width} height={150} ref={barRef}></svg>
         <div className="color-container">
           <div className="orange">proficient</div>
           <div className="light-orange">familiar</div>
@@ -181,7 +209,10 @@ const Tech = () => {
         <div className="accordion-container">
           <div className="accordion-head" onClick={jsClick}>
             javascript{" "}
-            <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
+            <FontAwesomeIcon
+              className="arrow-icon"
+              icon={jsToggle ? "arrow-up" : "arrow-down"}
+            />
           </div>
           <animated.div style={jsAniamte}>
             <div className="tech-listing-container">
@@ -198,7 +229,10 @@ const Tech = () => {
           </animated.div>
           <div className="accordion-head" onClick={rClick}>
             react
-            <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
+            <FontAwesomeIcon
+              className="arrow-icon"
+              icon={rToggle ? "arrow-up" : "arrow-down"}
+            />
           </div>
           <animated.div style={rAnimate}>
             <div className="tech-listing-container">
@@ -217,24 +251,31 @@ const Tech = () => {
           </animated.div>
           <div className="accordion-head" onClick={pClick}>
             python
-            <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
+            <FontAwesomeIcon
+              className="arrow-icon"
+              icon={pToggle ? "arrow-up" : "arrow-down"}
+            />
           </div>
           <animated.div style={pAnimate}>
             <div className="tech-listing-container">
               <div className="tech-listing orange">flask-RESTful</div>
               <div className="tech-listing orange">flask-jwt-extended</div>
-              <div className="tech-listing orange">marshmallow</div>
               <div className="tech-listing orange">sqlalchemy</div>
-              <div className="tech-listing orange">oauthlib</div>
+              <div className="tech-listing light-orange">marshmallow</div>
+              <div className="tech-listing light-orange">oauthlib</div>
               <div className="tech-listing light-orange">
                 django-rest-framework
               </div>
               <div className="tech-listing ">django</div>
+              <div className="tech-listing ">celery</div>
             </div>
           </animated.div>
           <div className="accordion-head" onClick={cClick}>
             cloud
-            <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
+            <FontAwesomeIcon
+              className="arrow-icon"
+              icon={cToggle ? "arrow-up" : "arrow-down"}
+            />
           </div>
           <animated.div style={cAnimate}>
             <div className="tech-listing-container">

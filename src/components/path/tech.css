@@ -21,13 +21,13 @@
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .accordion-container {
   width: 300px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
 }
 
 .accordion-head:hover > .arrow-icon {
