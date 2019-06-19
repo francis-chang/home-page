@@ -36,10 +36,8 @@ let points = [
 
 const Tech = () => {
   const barRef = useRef(null)
-  const [height, setHeight] = useState(window.innerwidth > 800 ? 150 : 100)
-  const [width, setWidth] = useState(
-    window.innerwidth > 800 ? 800 : window.innerWidth * 0.8
-  )
+  const [height, setHeight] = useState(150)
+  const [width, setWidth] = useState(800)
   const [set, setSet] = useState(false)
 
   const [jsToggle, setJsToggle] = useState(false)
@@ -59,6 +57,11 @@ const Tech = () => {
   const [selection, setSelection] = useState(null)
 
   useEffect(() => {
+    if (window.innerWidth < 800 && width === 800) {
+      setWidth(window.innerWidth * 0.8)
+      setHeight(100)
+    }
+
     if (resize) {
       renderChart()
       setResize(false)
@@ -300,9 +303,7 @@ const Tech = () => {
               <div className="tech-listing light-orange">digital ocean</div>
               <div className="tech-listing light-orange">cloudinary</div>
               <div className="tech-listing light-orange">postgres</div>
-              <div className="tech-listing">now.sh</div>
               <div className="tech-listing">sendgrid</div>
-              <div className="tech-listing ">mailgun</div>
               <div className="tech-listing ">mongo</div>
               <div className="tech-listing ">redis</div>
               <div className="tech-listing ">nginx</div>

@@ -7,7 +7,8 @@
   margin: 0 auto;
   font-family: "Ubuntu Mono", sans-serif;
   font-weight: 600;
-  height: 80%;
+  height: 90%;
+  padding-top: 5rem;
 }
 
 .title {
@@ -66,6 +67,7 @@
   .tech-container {
     width: 90%;
     height: 100%;
+    padding-top: 0rem;
   }
 
   .accordion-head {
@@ -80,6 +82,7 @@
   }
   .color-container {
     width: 100%;
+    max-width: 400px;
     font-size: 1rem;
   }
 }
