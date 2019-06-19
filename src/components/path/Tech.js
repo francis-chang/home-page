@@ -36,8 +36,10 @@ let points = [
 
 const Tech = () => {
   const barRef = useRef(null)
-  const [height, setHeight] = useState(150)
-  const [width, setWidth] = useState(800)
+  const [height, setHeight] = useState(window.innerwidth > 800 ? 150 : 100)
+  const [width, setWidth] = useState(
+    window.innerwidth > 800 ? 800 : window.innerWidth * 0.8
+  )
   const [set, setSet] = useState(false)
 
   const [jsToggle, setJsToggle] = useState(false)
@@ -67,9 +69,11 @@ const Tech = () => {
       window.addEventListener("resize", () => {
         if (window.innerWidth > 800) {
           setWidth(800)
+          setHeight(150)
           setResize(true)
         } else {
           setWidth(window.innerWidth * 0.85)
+          setHeight(100)
           setResize(true)
         }
       })
@@ -130,15 +134,27 @@ const Tech = () => {
       .attr("height", 0)
   }
   const jsAniamte = useSpring({
-    height: jsToggle ? "16.5rem" : "0rem",
+    height: jsToggle
+      ? window.innerWidth > 800
+        ? "16.5rem"
+        : "13.5rem"
+      : "0rem",
     overflow: "hidden",
   })
   const rAnimate = useSpring({
-    height: rToggle ? "16.5rem" : "0rem",
+    height: rToggle
+      ? window.innerWidth > 800
+        ? "16.5rem"
+        : "13.5rem"
+      : "0rem",
     overflow: "hidden",
   })
   const pAnimate = useSpring({
-    height: pToggle ? "14.3rem" : "0rem",
+    height: pToggle
+      ? window.innerWidth > 800
+        ? "14.3rem"
+        : "12.3rem"
+      : "0rem",
     overflow: "hidden",
   })
   const cAnimate = useSpring({
@@ -200,7 +216,7 @@ const Tech = () => {
   return (
     <div className="section">
       <div className="tech-container">
-        <svg width={width} height={150} ref={barRef}></svg>
+        <svg width={width} height={height} ref={barRef}></svg>
         <div className="color-container">
           <div className="orange">proficient</div>
           <div className="light-orange">familiar</div>
