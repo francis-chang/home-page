@@ -102,16 +102,20 @@ const Tech = () => {
       .attr("height", 0)
   }
   const jsAniamte = useSpring({
-    height: jsToggle ? "10rem" : "0rem",
+    height: jsToggle ? "16.5rem" : "0rem",
+    overflow: "hidden",
   })
   const rAnimate = useSpring({
-    height: rToggle ? "10rem" : "0rem",
+    height: rToggle ? "16.5rem" : "0rem",
+    overflow: "hidden",
   })
   const pAnimate = useSpring({
-    height: pToggle ? "10rem" : "0rem",
+    height: pToggle ? "13rem" : "0rem",
+    overflow: "hidden",
   })
   const cAnimate = useSpring({
-    height: cToggle ? "10rem" : "0rem",
+    height: cToggle ? "20rem" : "0rem",
+    overflow: "hidden",
   })
 
   const jsClick = () => {
@@ -169,28 +173,84 @@ const Tech = () => {
     <div className="section">
       <div className="tech-container">
         <svg ref={barRef}></svg>
-        <div className="title">tech that i have used</div>
+        <div className="color-container">
+          <div className="orange">proficient</div>
+          <div className="light-orange">familiar</div>
+          <div>used 1-2x</div>
+        </div>
         <div className="accordion-container">
           <div className="accordion-head" onClick={jsClick}>
             javascript{" "}
             <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
           </div>
-          <animated.div style={jsAniamte} />
+          <animated.div style={jsAniamte}>
+            <div className="tech-listing-container">
+              <div className="tech-listing orange">typescript</div>
+              <div className="tech-listing orange">d3</div>
+              <div className="tech-listing orange">axios</div>
+              <div className="tech-listing light-orange">jest</div>
+              <div className="tech-listing light-orange">eslint</div>
+              <div className="tech-listing ">angular 1.5</div>
+              <div className="tech-listing ">jquery</div>
+              <div className="tech-listing ">express</div>
+              <div className="tech-listing ">infernojs</div>
+            </div>
+          </animated.div>
           <div className="accordion-head" onClick={rClick}>
             react
             <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
           </div>
-          <animated.div style={rAnimate} />
+          <animated.div style={rAnimate}>
+            <div className="tech-listing-container">
+              <div className="tech-listing orange">redux (thunk, saga)</div>
+              <div className="tech-listing orange">react-spring</div>
+              <div className="tech-listing orange">styled-components</div>
+              <div className="tech-listing orange">react-router</div>
+              <div className="tech-listing light-orange">gatsby</div>
+              <div className="tech-listing light-orange">nextjs</div>
+              <div className="tech-listing light-orange">
+                react-transition-group
+              </div>
+              <div className="tech-listing">formik</div>
+              <div className="tech-listing ">storybook</div>
+            </div>
+          </animated.div>
           <div className="accordion-head" onClick={pClick}>
             python
             <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
           </div>
-          <animated.div style={pAnimate} />
+          <animated.div style={pAnimate}>
+            <div className="tech-listing-container">
+              <div className="tech-listing orange">flask-RESTful</div>
+              <div className="tech-listing orange">flask-jwt-extended</div>
+              <div className="tech-listing orange">marshmallow</div>
+              <div className="tech-listing orange">sqlalchemy</div>
+              <div className="tech-listing orange">oauthlib</div>
+              <div className="tech-listing light-orange">
+                django-rest-framework
+              </div>
+              <div className="tech-listing ">django</div>
+            </div>
+          </animated.div>
           <div className="accordion-head" onClick={cClick}>
             cloud
             <FontAwesomeIcon className="arrow-icon" icon="arrow-down" />
           </div>
-          <animated.div style={cAnimate} />
+          <animated.div style={cAnimate}>
+            <div className="tech-listing-container">
+              <div className="tech-listing light-orange">firebase</div>
+              <div className="tech-listing light-orange">heroku</div>
+              <div className="tech-listing light-orange">digital ocean</div>
+              <div className="tech-listing light-orange">cloudinary</div>
+              <div className="tech-listing light-orange">postgres</div>
+              <div className="tech-listing">now.sh</div>
+              <div className="tech-listing">sendgrid</div>
+              <div className="tech-listing ">mailgun</div>
+              <div className="tech-listing ">mongo</div>
+              <div className="tech-listing ">redis</div>
+              <div className="tech-listing ">nginx</div>
+            </div>
+          </animated.div>
         </div>
       </div>
     </div>
