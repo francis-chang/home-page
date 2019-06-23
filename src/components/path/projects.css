@@ -1,10 +1,16 @@
 .path--background {
   fill: none;
-  stroke: #000;
-  stroke-width: 2px;
+  stroke: orange;
+  stroke-width: 6px;
+}
+
+.path--foreground {
+  fill: orange;
 }
 
 .label {
-  font: 24px sans-serif;
+  font-family: "Ubuntu Mono", sans-serif;
+  font-size: 40px;
   text-anchor: middle;
+  fill: orange;
 }

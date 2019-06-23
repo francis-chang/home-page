@@ -9,6 +9,7 @@
   font-weight: 600;
   height: 90%;
   padding-top: 5rem;
+  user-select: none;
 }
 
 .title {
@@ -36,9 +37,40 @@
   transition-duration: 250ms;
 }
 
+@keyframes forward {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes forward-two {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .tech-listing {
   font-size: 1.2rem;
   padding: 0.3rem 1.7rem;
+}
+.arrow-transition {
+  animation-name: forward;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.arrow-transition-two {
+  animation-name: forward-two;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
 .orange {

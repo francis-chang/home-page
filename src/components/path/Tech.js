@@ -153,11 +153,7 @@ const Tech = () => {
     overflow: "hidden",
   })
   const pAnimate = useSpring({
-    height: pToggle
-      ? window.innerWidth > 800
-        ? "14.3rem"
-        : "12.3rem"
-      : "0rem",
+    height: pToggle ? (window.innerWidth > 800 ? "15rem" : "12.3rem") : "0rem",
     overflow: "hidden",
   })
   const cAnimate = useSpring({
@@ -229,7 +225,12 @@ const Tech = () => {
           <div className="accordion-head" onClick={jsClick}>
             javascript{" "}
             <FontAwesomeIcon
-              className="arrow-icon"
+              className={
+                jsToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              i
               icon={jsToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
@@ -249,7 +250,11 @@ const Tech = () => {
           <div className="accordion-head" onClick={rClick}>
             react
             <FontAwesomeIcon
-              className="arrow-icon"
+              className={
+                rToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
               icon={rToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
@@ -271,7 +276,12 @@ const Tech = () => {
           <div className="accordion-head" onClick={pClick}>
             python
             <FontAwesomeIcon
-              className="arrow-icon"
+              className={
+                pToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              i
               icon={pToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
@@ -292,7 +302,12 @@ const Tech = () => {
           <div className="accordion-head" onClick={cClick}>
             cloud
             <FontAwesomeIcon
-              className="arrow-icon"
+              className={
+                cToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              i
               icon={cToggle ? "arrow-up" : "arrow-down"}
             />
           </div>

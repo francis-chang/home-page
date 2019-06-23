@@ -42,8 +42,21 @@ const Projects = () => {
   const [ren, setRen] = useState(false)
   const [path, setPath] = useState(null)
   useEffect(() => {
+    const resize = () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+      if (width < 800 && window.innerWidth > 800) {
+        setWidth(800)
+        setRen(true)
+      } else {
+        setWidth(window.innerWidth * 0.8)
+        setRen(true)
+      }
+    }
     if (!selection) {
       setSelection(select(svgRef.current))
+      window.addEventListener("resize", resize)
       setRen(true)
     }
     if (ren) {
@@ -53,6 +66,15 @@ const Projects = () => {
   })
   const renderClock = () => {
     if (selection) {
+      selection.selectAll("*").remove()
+      for (let x = 0; x < fields.length; x++) {
+        if (x === 0) {
+          fields[x].value = 24
+        } else {
+          fields[x].value = 60
+        }
+      }
+
       const clockArc = arc()
         .innerRadius(width / 6.5 - 60)
         .outerRadius(width / 6.5 - 5)
@@ -104,9 +126,10 @@ const Projects = () => {
           .ease(easeElastic)
           .duration(750)
           .attrTween("d", arcTween)
-        label.text(d => d.value + d.label)
+        label.text(d => d.value)
       }
       setInter(setInterval(update, 1000))
+      update()
     }
   }
 

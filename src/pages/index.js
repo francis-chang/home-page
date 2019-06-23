@@ -257,10 +257,22 @@ const IndexPage = () => {
                 g liulian
               </ArtistLink>
               <ArtistLink
+                href="https://www.artstation.com/mj_liyongqiang"
+                target="_blank"
+              >
+                mao jin
+              </ArtistLink>
+              <ArtistLink
                 href="https://www.instagram.com/michal_sawtyruk/?hl=en"
                 target="_blank"
               >
                 michal sawtyruk
+              </ArtistLink>
+              <ArtistLink
+                href="https://www.artstation.com/santella"
+                target="_blank"
+              >
+                n kayurova
               </ArtistLink>
               <ArtistLink
                 href="https://www.artstation.com/powl"
@@ -274,23 +286,12 @@ const IndexPage = () => {
               >
                 sachin teng
               </ArtistLink>
-              <ArtistLink
-                href="https://www.instagram.com/sinixdesign/?hl=en"
-                target="_blank"
-              >
-                sinix
-              </ArtistLink>
+
               <ArtistLink
                 href="https://www.artstation.com/mayadim1926"
                 target="_blank"
               >
                 svetlana dmitrieva
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.instagram.com/vacuumch_/?hl=en"
-                target="_blank"
-              >
-                vacuum chan
               </ArtistLink>
             </ArtistContainer>
           </animated.div>
