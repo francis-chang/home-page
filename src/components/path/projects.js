@@ -36,7 +36,7 @@ let fields = [
 const Projects = () => {
   const svgRef = useRef(null)
   const [width, setWidth] = useState(800)
-  const [height, setHeight] = useState(400)
+  const [height, setHeight] = useState(200)
   const [selection, setSelection] = useState(null)
   const [interval, setInter] = useState(null)
   const [ren, setRen] = useState(false)
@@ -46,7 +46,7 @@ const Projects = () => {
       if (interval) {
         clearInterval(interval)
       }
-      if (width < 800 && window.innerWidth > 800) {
+      if (window.innerWidth > 800) {
         setWidth(800)
         setRen(true)
       } else {
@@ -76,8 +76,8 @@ const Projects = () => {
       }
 
       const clockArc = arc()
-        .innerRadius(width / 6.5 - 60)
-        .outerRadius(width / 6.5 - 5)
+        .innerRadius(width / 8 - 25)
+        .outerRadius(width / 8 - 5)
         .startAngle(0)
         .endAngle(d => (d.value / d.size) * 2 * Math.PI)
 
@@ -105,6 +105,7 @@ const Projects = () => {
       let label = field
         .append("text")
         .attr("class", "label")
+        .attr("font-size", "70px")
         .attr("dy", ".35em")
 
       function arcTween(b) {
@@ -135,7 +136,15 @@ const Projects = () => {
 
   return (
     <div className="section">
-      <svg ref={svgRef}></svg>
+      <div className="projects-container">
+        <svg ref={svgRef}></svg>
+        <div className="projects-list-container">
+          <div className="projects-listing">poll</div>
+          <div className="projects-listing">audio visualizer</div>
+          <div className="projects-listing">shipment tracker</div>
+          <div className="projects-listing">instagram clone</div>
+        </div>
+      </div>
     </div>
   )
 }

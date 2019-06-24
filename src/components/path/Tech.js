@@ -230,7 +230,6 @@ const Tech = () => {
                   ? "arrow-icon arrow-transition-two"
                   : "arrow-transition arrow-icon"
               }
-              i
               icon={jsToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
@@ -281,7 +280,6 @@ const Tech = () => {
                   ? "arrow-icon arrow-transition-two"
                   : "arrow-transition arrow-icon"
               }
-              i
               icon={pToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
@@ -307,7 +305,6 @@ const Tech = () => {
                   ? "arrow-icon arrow-transition-two"
                   : "arrow-transition arrow-icon"
               }
-              i
               icon={cToggle ? "arrow-up" : "arrow-down"}
             />
           </div>
