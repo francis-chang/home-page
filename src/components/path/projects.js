@@ -1,3 +1,6 @@
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { easeElastic } from "d3-ease"
 import { interpolate } from "d3-interpolate"
 import { select } from "d3-selection"
@@ -5,6 +8,8 @@ import { arc } from "d3-shape"
 import "d3-transition"
 import React, { useEffect, useRef, useState } from "react"
 import "./projects.css"
+
+library.add(faArrowDown, faArrowUp)
 
 let fields = [
   {
@@ -139,10 +144,21 @@ const Projects = () => {
       <div className="projects-container">
         <svg ref={svgRef}></svg>
         <div className="projects-list-container">
-          <div className="projects-listing">poll</div>
-          <div className="projects-listing">audio visualizer</div>
-          <div className="projects-listing">shipment tracker</div>
-          <div className="projects-listing">instagram clone</div>
+          <div name="poll" className="projects-listing">
+            poll <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+          </div>
+          <div name="audio" className="projects-listing">
+            audio visualizer
+            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+          </div>
+          <div name="shipment" className="projects-listing">
+            shipment tracker{" "}
+            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+          </div>
+          <div name="clone" className="projects-listing">
+            instagram clone{" "}
+            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+          </div>
         </div>
       </div>
     </div>
