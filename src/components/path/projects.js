@@ -45,7 +45,6 @@ const Projects = () => {
   const [selection, setSelection] = useState(null)
   const [interval, setInter] = useState(null)
   const [ren, setRen] = useState(false)
-  const [path, setPath] = useState(null)
   useEffect(() => {
     const resize = () => {
       if (interval) {
@@ -71,6 +70,9 @@ const Projects = () => {
   })
   const renderClock = () => {
     if (selection) {
+      if (interval) {
+        clearInterval(interval)
+      }
       selection.selectAll("*").remove()
       for (let x = 0; x < fields.length; x++) {
         if (x === 0) {

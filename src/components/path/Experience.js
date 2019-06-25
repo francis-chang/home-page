@@ -107,11 +107,11 @@ const Experience = ({ fullpageApi }) => {
           </div>
           <div className="age-listing-container">
             <div className="age">16</div>
-            <div className="listing">took AP Computer Science 1</div>
+            <div className="listing">took AP Computer Science A</div>
           </div>
           <div className="age-listing-container">
             <div className="age">17</div>
-            <div className="listing">took AP Computer Science 2</div>
+            <div className="listing">took AP Computer Science AB</div>
           </div>
           <div className="age-listing-container">
             <div className="age">18</div>
