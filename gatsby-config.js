@@ -5,6 +5,7 @@ module.exports = {
     author: `@zfc9d3f`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-web-font-loader",

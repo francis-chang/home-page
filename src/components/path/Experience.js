@@ -29,7 +29,7 @@ const points = [
 
 const Experience = ({ fullpageApi }) => {
   const [selection, setSelection] = useState(null)
-  const [width, setWidth] = useState(window.innerWidth * 0.4)
+  const [width, setWidth] = useState(600)
   const [height, setHeight] = useState(150)
 
   const lineRef = useRef(null)
@@ -102,21 +102,22 @@ const Experience = ({ fullpageApi }) => {
           <div className="age-listing-container">
             <div className="age">15</div>
             <div className="listing">
-              cracked WEP keys with Backtrack 2 & 3 (Kali Linux)
+              found hidden ssids and cracked wep keys with backtrack 2 & 3 (kali
+              linux)
             </div>
           </div>
           <div className="age-listing-container">
             <div className="age">16</div>
-            <div className="listing">took AP Computer Science A</div>
+            <div className="listing">took ap computer science a (java)</div>
           </div>
           <div className="age-listing-container">
             <div className="age">17</div>
-            <div className="listing">took AP Computer Science AB</div>
+            <div className="listing">took ap computer science ab</div>
           </div>
           <div className="age-listing-container">
             <div className="age">18</div>
             <div className="listing">
-              enrolled for Computer Science in the University of Texas @ Dallas
+              enrolled for CS at the university of texas @dallas
             </div>
           </div>
           <div className="age-listing-container">
@@ -153,9 +154,7 @@ const Experience = ({ fullpageApi }) => {
           </div>
           <div className="age-listing-container">
             <div className="age">26</div>
-            <div className="listing">
-              built projects in postgres, flask, react, and d3
-            </div>
+            <div className="listing">digital ocean, amazon s3 for</div>
           </div>
         </div>
       </div>
