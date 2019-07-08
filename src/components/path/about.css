@@ -1,8 +1,34 @@
 .about-container {
-  width: 30%;
+  width: 40%;
   font-family: "Ubuntu Mono", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   font-weight: 700;
   margin: 0 auto;
+}
+
+.margin {
+  margin-right: 3rem;
+}
+
+.indent {
+  margin-left: 2rem;
+}
+
+.const {
+  color: #ffc970;
+}
+.new {
+  color: #ffc970;
+}
+.func {
+  color: #8f93a3;
+}
+.quotes {
+  color: #ff8880;
+}
+.num {
+  color: #96a7ff;
 }
 
 .orange {
@@ -11,8 +37,4 @@
 
 .red {
   color: #ffdba1;
-}
-
-.indent {
-  margin-left: 2rem;
 }
