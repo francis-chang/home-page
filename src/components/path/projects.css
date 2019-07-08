@@ -1,17 +1,17 @@
 .path--background {
   fill: none;
-  stroke: orange;
+  stroke: #ffc970;
   stroke-width: 6px;
 }
 
 .path--foreground {
-  fill: orange;
+  fill: #ffc970;
 }
 
 .label {
   font-family: "Ubuntu Mono", sans-serif;
   text-anchor: middle;
-  fill: orange;
+  fill: #ffc970;
 }
 
 .projects-container {
@@ -36,4 +36,65 @@
   display: flex;
   justify-content: space-between;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.projects-listing:hover > .arrow-icon {
+  color: #ffc970;
+  transition-duration: 250ms;
+}
+
+.animation-drop {
+  margin: 0 auto;
+  width: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.links-container {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.example-button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  border: 3px solid #ffc970;
+  color: #ffc970;
+  background-color: #2a2c33;
+  font-family: "Ubuntu Mono", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.example-button:hover {
+  background-color: #ffc970;
+  color: #2a2c33;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.github-button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  border: 3px solid #d5d7dd;
+  color: #d5d7dd;
+  background-color: #2a2c33;
+  font-family: "Ubuntu Mono", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.github-button:hover {
+  background-color: #d5d7dd;
+  color: #2a2c33;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
 }

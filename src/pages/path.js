@@ -1,8 +1,10 @@
 import ReactFullpage from "@fullpage/react-fullpage"
 import React from "react"
+import About from "../components/path/about"
 import Audio from "../components/path/Audio"
 import Experience from "../components/path/Experience"
 import Projects from "../components/path/projects"
+import Statement from "../components/path/statement"
 import Tech from "../components/path/Tech"
 
 const SecondPage = () => (
@@ -10,10 +12,12 @@ const SecondPage = () => (
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullpage.Wrapper>
-          <Audio fullpageApi={fullpageApi}></Audio>
-          <Experience fullpageApi={fullpageApi}></Experience>
+          <Audio></Audio>
+          <Experience></Experience>
           <Tech></Tech>
           <Projects></Projects>
+          <Statement></Statement>
+          <About />
         </ReactFullpage.Wrapper>
       )
     }}

@@ -51,6 +51,7 @@ const Projects = () => {
   const [audioToggle, setAudioToggle] = useState(false)
   const [shipmentToggle, setShipmentToggle] = useState(false)
   const [instaToggle, setInstaToggle] = useState(false)
+  const [minervaToggle, setMinervaToggle] = useState(false)
   useEffect(() => {
     if (window && window.innerWidth < 800) {
       setWidth(window.innerWidth)
@@ -166,23 +167,28 @@ const Projects = () => {
   }
 
   const pollAnimate = useSpring({
-    width: "10rem",
+    width: "100%",
     height: pollToggle ? "10rem" : "0rem",
     overflow: "hidden",
   })
   const audioAnimate = useSpring({
-    width: "10rem",
+    width: "100%",
     height: audioToggle ? "10rem" : "0rem",
     overflow: "hidden",
   })
   const shipmentAnimate = useSpring({
-    width: "10rem",
+    width: "100%",
     height: shipmentToggle ? "10rem" : "0rem",
     overflow: "hidden",
   })
   const instaAnimate = useSpring({
-    width: "10rem",
+    width: "100%",
     height: instaToggle ? "10rem" : "0rem",
+    overflow: "hidden",
+  })
+  const minervaAnimate = useSpring({
+    width: "100%",
+    height: minervaToggle ? "10rem" : "0rem",
     overflow: "hidden",
   })
 
@@ -195,6 +201,9 @@ const Projects = () => {
     }
     if (instaToggle) {
       setInstaToggle(false)
+    }
+    if (minervaToggle) {
+      setMinervaToggle(false)
     }
     setPollToggle(!pollToggle)
   }
@@ -209,6 +218,9 @@ const Projects = () => {
     if (instaToggle) {
       setInstaToggle(false)
     }
+    if (minervaToggle) {
+      setMinervaToggle(false)
+    }
     setAudioToggle(!audioToggle)
   }
 
@@ -221,6 +233,9 @@ const Projects = () => {
     }
     if (instaToggle) {
       setInstaToggle(false)
+    }
+    if (minervaToggle) {
+      setMinervaToggle(false)
     }
     setShipmentToggle(!shipmentToggle)
   }
@@ -235,37 +250,142 @@ const Projects = () => {
     if (shipmentToggle) {
       setShipmentToggle(false)
     }
+    if (minervaToggle) {
+      setMinervaToggle(false)
+    }
     setInstaToggle(!instaToggle)
   }
 
+  const minervaClick = () => {
+    if (pollToggle) {
+      setPollToggle(false)
+    }
+    if (audioToggle) {
+      setAudioToggle(false)
+    }
+    if (shipmentToggle) {
+      setShipmentToggle(false)
+    }
+    if (instaToggle) {
+      setInstaToggle(false)
+    }
+    setMinervaToggle(!minervaToggle)
+  }
   return (
     <div className="section">
       <div className="projects-container">
         <svg ref={svgRef}></svg>
         <div className="projects-list-container">
           <div name="poll" className="projects-listing" onClick={pollClick}>
-            poll <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+            poll{" "}
+            <FontAwesomeIcon
+              className={
+                pollToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={pollToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
           </div>
-          <animated.div style={pollAnimate}>hello</animated.div>
+          <animated.div style={pollAnimate}>
+            <div className="animation-drop">
+              poll application built with flask react and d3. did a lot of
+              expirimenting with buttonless forms but realized it became highly
+              innaccessible
+              <div className="links-container">
+                <button className="example-button">example</button>
+                <button className="github-button">github</button>
+              </div>
+            </div>
+          </animated.div>
           <div name="audio" className="projects-listing" onClick={audioClick}>
             audio visualizer
-            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              className={
+                audioToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={audioToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
           </div>
-          <animated.div style={audioAnimate}>hello</animated.div>
+          <animated.div style={audioAnimate}>
+            <div className="animation-drop">
+              toyed around with the web audio api built an audio visualizer with
+              d3 and react
+              <div className="links-container">
+                <button className="example-button">example</button>
+                <button className="github-button">github</button>
+              </div>
+            </div>
+          </animated.div>
           <div
             name="shipment"
             className="projects-listing"
             onClick={shipmentClick}
           >
             shipment tracker{" "}
-            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              className={
+                shipmentToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={shipmentToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
           </div>
-          <animated.div style={shipmentAnimate}>hello</animated.div>
+          <animated.div style={shipmentAnimate}>
+            <div className="animation-drop">
+              built a shipment tracker with d3 and react
+              <div className="links-container">
+                <button className="example-button">example</button>
+                <button className="github-button">github</button>
+              </div>
+            </div>
+          </animated.div>
           <div name="clone" className="projects-listing" onClick={instaClick}>
             instagram clone{" "}
-            <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
+            <FontAwesomeIcon
+              className={
+                instaToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={instaToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
           </div>
-          <animated.div style={instaAnimate}>hello</animated.div>
+          <animated.div style={instaAnimate}>
+            <div className="animation-drop">
+              built an instagram clone using react and flask with oauth and
+              cloudinary
+              <div className="links-container">
+                <button className="example-button">example</button>
+                <button className="github-button">github</button>
+              </div>
+            </div>
+          </animated.div>
+
+          <div name="clone" className="projects-listing" onClick={minervaClick}>
+            landing/hero test
+            <FontAwesomeIcon
+              className={
+                minervaToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={minervaToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
+          </div>
+          <animated.div style={minervaAnimate}>
+            <div className="animation-drop">
+              created a landing / hero page basically testing svg curves and
+              using humaaans.com. inspired by render.com
+              <div className="links-container">
+                <button className="example-button">example</button>
+                <button className="github-button">github</button>
+              </div>
+            </div>
+          </animated.div>
         </div>
       </div>
     </div>
