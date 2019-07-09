@@ -289,12 +289,23 @@ const Projects = () => {
           </div>
           <animated.div style={pollAnimate}>
             <div className="animation-drop">
-              poll application built with flask react and d3. did a lot of
-              expirimenting with buttonless forms but realized it became highly
-              innaccessible
+              poll application built with flask react and d3. expiremented with
+              buttonless forms
               <div className="links-container">
-                <button className="example-button">example</button>
-                <button className="github-button">github</button>
+                <a
+                  href="https://poll-c4248.firebaseapp.com/"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/poll-backend"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
               </div>
             </div>
           </animated.div>
@@ -311,11 +322,23 @@ const Projects = () => {
           </div>
           <animated.div style={audioAnimate}>
             <div className="animation-drop">
-              toyed around with the web audio api built an audio visualizer with
-              d3 and react
+              used the web audio api to build an audio visualizer in d3 and
+              react
               <div className="links-container">
-                <button className="example-button">example</button>
-                <button className="github-button">github</button>
+                <a
+                  href="https://sleepy-swirles-df5525.netlify.com/"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/d3-music"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
               </div>
             </div>
           </animated.div>
@@ -338,8 +361,20 @@ const Projects = () => {
             <div className="animation-drop">
               built a shipment tracker with d3 and react
               <div className="links-container">
-                <button className="example-button">example</button>
-                <button className="github-button">github</button>
+                <a
+                  href="https://distracted-wozniak-3a4b78.netlify.com/tracking"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/dashboard-fin"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
               </div>
             </div>
           </animated.div>
@@ -359,8 +394,14 @@ const Projects = () => {
               built an instagram clone using react and flask with oauth and
               cloudinary
               <div className="links-container">
-                <button className="example-button">example</button>
-                <button className="github-button">github</button>
+                <a className="example-button">explanation</a>
+                <a
+                  href="https://github.com/zfc9d3f/bettergram-front"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
               </div>
             </div>
           </animated.div>
@@ -378,11 +419,24 @@ const Projects = () => {
           </div>
           <animated.div style={minervaAnimate}>
             <div className="animation-drop">
-              created a landing / hero page basically testing svg curves and
-              using humaaans.com. inspired by render.com
+              created a landing page for fictional company testing svg design
+              <br />
+              built with humaaans.com, inkscape, and inspired by render.com
               <div className="links-container">
-                <button className="example-button">example</button>
-                <button className="github-button">github</button>
+                <a
+                  href="https://ecstatic-einstein-2f00b4.netlify.com/"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/minerva-health-cra"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
               </div>
             </div>
           </animated.div>

@@ -117,7 +117,7 @@ const Experience = ({ fullpageApi }) => {
           <div className="age-listing-container">
             <div className="age">18</div>
             <div className="listing">
-              enrolled for CS at the university of texas @dallas
+              enrolled for computer science at the university of texas @ dallas
             </div>
           </div>
           <div className="age-listing-container">

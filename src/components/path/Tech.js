@@ -139,8 +139,8 @@ const Tech = () => {
   const jsAniamte = useSpring({
     height: jsToggle
       ? window.innerWidth > 800
-        ? "13.5rem"
-        : "10.5rem"
+        ? "14.5rem"
+        : "11.5rem"
       : "0rem",
     overflow: "hidden",
   })
@@ -235,6 +235,7 @@ const Tech = () => {
           </div>
           <animated.div style={jsAniamte}>
             <div className="tech-listing-container">
+              <div className="tech-listing orange">react</div>
               <div className="tech-listing orange">typescript</div>
               <div className="tech-listing orange">d3</div>
               <div className="tech-listing light-orange">jest</div>

@@ -11,7 +11,8 @@ const About = () => (
       <br />
       <span className="margin" />
       <span className="new">.</span>
-      <span className="func">is</span>(korean, taiwanese, american)
+      <span className="func">is</span>(taiwanese<span className="new">,</span>{" "}
+      korean<span className="new">,</span> american)
       <br />
       <span className="margin" />
       <span className="new">.</span>
