@@ -11,8 +11,16 @@
   font-size: 1.3rem;
   margin-left: 3rem;
   margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
 }
 
 .higlight {
   color: #ffc970;
+}
+
+.learning-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
 }

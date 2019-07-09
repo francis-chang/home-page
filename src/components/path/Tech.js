@@ -139,8 +139,8 @@ const Tech = () => {
   const jsAniamte = useSpring({
     height: jsToggle
       ? window.innerWidth > 800
-        ? "16.5rem"
-        : "13.5rem"
+        ? "13.5rem"
+        : "10.5rem"
       : "0rem",
     overflow: "hidden",
   })
@@ -237,9 +237,7 @@ const Tech = () => {
             <div className="tech-listing-container">
               <div className="tech-listing orange">typescript</div>
               <div className="tech-listing orange">d3</div>
-              <div className="tech-listing orange">axios</div>
               <div className="tech-listing light-orange">jest</div>
-              <div className="tech-listing light-orange">eslint</div>
               <div className="tech-listing ">angular 1.5</div>
               <div className="tech-listing ">jquery</div>
               <div className="tech-listing ">express</div>

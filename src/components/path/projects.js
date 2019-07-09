@@ -14,11 +14,11 @@ library.add(faArrowDown, faArrowUp)
 
 let fields = [
   {
-    value: 24,
-    size: 24,
+    value: 12,
+    size: 12,
     label: "h",
     update: function(date) {
-      return date.getHours()
+      return date.getHours() % 12
     },
   },
   {
@@ -86,7 +86,7 @@ const Projects = () => {
       selection.selectAll("*").remove()
       for (let x = 0; x < fields.length; x++) {
         if (x === 0) {
-          fields[x].value = 24
+          fields[x].value = 12
         } else {
           fields[x].value = 60
         }
