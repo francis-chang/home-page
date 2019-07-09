@@ -38,3 +38,43 @@
 .red {
   color: #ffdba1;
 }
+
+@media only screen and (max-width: 1450px) {
+  .about-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .about-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .about-container {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .about-container {
+    width: 85%;
+    font-size: 1.1rem;
+    padding-left: 7rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .about-container {
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 0rem;
+  }
+}
