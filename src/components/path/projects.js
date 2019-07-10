@@ -18,6 +18,9 @@ let fields = [
     size: 12,
     label: "h",
     update: function(date) {
+      if (date.getHours() % 12 === 0) {
+        return 12
+      }
       return date.getHours() % 12
     },
   },

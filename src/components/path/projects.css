@@ -105,3 +105,22 @@
   transition-duration: 200ms;
   transition-timing-function: ease-out;
 }
+
+@media only screen and (max-width: 700px) {
+  .projects-listing {
+    width: 40%;
+  }
+  .animation-drop {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .projects-listing {
+    width: 35%;
+    font-size: 1.3rem;
+  }
+  .animation-drop {
+    width: 35%;
+  }
+}

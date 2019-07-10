@@ -220,7 +220,7 @@ const IndexPage = () => {
         <Listing>
           <LastLasting onClick={() => setToggle(!toggle)}>
             i like these artists
-            <ArrowDown className="arrow">
+            <ArrowDown>
               <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
             </ArrowDown>
           </LastLasting>
