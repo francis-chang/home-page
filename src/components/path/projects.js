@@ -171,7 +171,7 @@ const Projects = () => {
 
   const pollAnimate = useSpring({
     width: "100%",
-    height: pollToggle ? "10rem" : "0rem",
+    height: pollToggle ? "9rem" : "0rem",
     overflow: "hidden",
   })
   const audioAnimate = useSpring({
@@ -181,12 +181,12 @@ const Projects = () => {
   })
   const shipmentAnimate = useSpring({
     width: "100%",
-    height: shipmentToggle ? "10rem" : "0rem",
+    height: shipmentToggle ? "11rem" : "0rem",
     overflow: "hidden",
   })
   const instaAnimate = useSpring({
     width: "100%",
-    height: instaToggle ? "10rem" : "0rem",
+    height: instaToggle ? "14rem" : "0rem",
     overflow: "hidden",
   })
   const minervaAnimate = useSpring({
@@ -279,72 +279,6 @@ const Projects = () => {
       <div className="projects-container">
         <svg ref={svgRef}></svg>
         <div className="projects-list-container">
-          <div name="poll" className="projects-listing" onClick={pollClick}>
-            poll{" "}
-            <FontAwesomeIcon
-              className={
-                pollToggle
-                  ? "arrow-icon arrow-transition-two"
-                  : "arrow-transition arrow-icon"
-              }
-              icon={pollToggle ? "arrow-up" : "arrow-down"}
-            ></FontAwesomeIcon>
-          </div>
-          <animated.div style={pollAnimate}>
-            <div className="animation-drop">
-              poll application built with flask react and d3. expiremented with
-              buttonless forms
-              <div className="links-container">
-                <a
-                  href="https://poll-c4248.firebaseapp.com/"
-                  target="_blank"
-                  className="example-button"
-                >
-                  example
-                </a>
-                <a
-                  href="https://github.com/zfc9d3f/poll-backend"
-                  target="_blank"
-                  className="github-button"
-                >
-                  github
-                </a>
-              </div>
-            </div>
-          </animated.div>
-          <div name="audio" className="projects-listing" onClick={audioClick}>
-            audio visualizer
-            <FontAwesomeIcon
-              className={
-                audioToggle
-                  ? "arrow-icon arrow-transition-two"
-                  : "arrow-transition arrow-icon"
-              }
-              icon={audioToggle ? "arrow-up" : "arrow-down"}
-            ></FontAwesomeIcon>
-          </div>
-          <animated.div style={audioAnimate}>
-            <div className="animation-drop">
-              used the web audio api to build an audio visualizer in d3 and
-              react
-              <div className="links-container">
-                <a
-                  href="https://sleepy-swirles-df5525.netlify.com/"
-                  target="_blank"
-                  className="example-button"
-                >
-                  example
-                </a>
-                <a
-                  href="https://github.com/zfc9d3f/d3-music"
-                  target="_blank"
-                  className="github-button"
-                >
-                  github
-                </a>
-              </div>
-            </div>
-          </animated.div>
           <div
             name="shipment"
             className="projects-listing"
@@ -362,7 +296,9 @@ const Projects = () => {
           </div>
           <animated.div style={shipmentAnimate}>
             <div className="animation-drop">
-              built a shipment tracker with d3 and react
+              projected flights ontop of d3-geo USA map with information on
+              coordinates, cargo, landing estimates, flight, duration, speed and
+              altitude and shipment fulfillment information
               <div className="links-container">
                 <a
                   href="https://distracted-wozniak-3a4b78.netlify.com/tracking"
@@ -382,7 +318,7 @@ const Projects = () => {
             </div>
           </animated.div>
           <div name="clone" className="projects-listing" onClick={instaClick}>
-            instagram clone{" "}
+            photoblog platform{" "}
             <FontAwesomeIcon
               className={
                 instaToggle
@@ -394,10 +330,20 @@ const Projects = () => {
           </div>
           <animated.div style={instaAnimate}>
             <div className="animation-drop">
-              built an instagram clone using react and flask with oauth and
-              cloudinary
+              built a microservice in Flask, utilizing sendgrid and
+              flask-oauthlib for email authorization handling and oauth
+              connections with github. Utilized styled components and CSS and
+              javascript animations for the UI, And had cloudinary deal with
+              image hosting and transformations
               <div className="links-container">
-                <a className="example-button">explanation</a>
+                <a
+                  className="github-button"
+                  href="https://vimeo.com/350891768"
+                  target="_blank"
+                  style={{ marginRight: "1rem" }}
+                >
+                  explanation
+                </a>
                 <a
                   href="https://github.com/zfc9d3f/bettergram-front"
                   target="_blank"
@@ -422,9 +368,8 @@ const Projects = () => {
           </div>
           <animated.div style={minervaAnimate}>
             <div className="animation-drop">
-              created a landing page for fictional company testing svg design
-              <br />
-              built with humaaans.com, inkscape, and inspired by render.com
+              used adobe illustrator and Humaaans to design the svgs for a hero
+              / landing page. built with styled-components and gatsby.
               <div className="links-container">
                 <a
                   href="https://ecstatic-einstein-2f00b4.netlify.com/"
@@ -435,6 +380,81 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://github.com/zfc9d3f/minerva-health-cra"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
+              </div>
+            </div>
+          </animated.div>
+          <div name="audio" className="projects-listing" onClick={audioClick}>
+            audio visualizer
+            <FontAwesomeIcon
+              className={
+                audioToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={audioToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
+          </div>
+          <animated.div style={audioAnimate}>
+            <div className="animation-drop">
+              utilized the web audio api to create analysers that would be fed
+              into d3 to create visualizations in the form of an oscilloscope or
+              frequency.
+              <div className="links-container">
+                <a
+                  href="https://sleepy-swirles-df5525.netlify.com/"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/d3-music"
+                  target="_blank"
+                  className="github-button"
+                >
+                  github
+                </a>
+              </div>
+            </div>
+          </animated.div>
+          <div name="poll" className="projects-listing" onClick={pollClick}>
+            poll{" "}
+            <FontAwesomeIcon
+              className={
+                pollToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={pollToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
+          </div>
+          <animated.div style={pollAnimate}>
+            <div className="animation-drop">
+              A platform built with Flask-Restful and Postgres with React and D3
+              for bar charts where users can sign up and poll or vote.
+              <div className="links-container">
+                <a
+                  href="https://poll-c4248.firebaseapp.com/"
+                  target="_blank"
+                  className="example-button"
+                >
+                  example
+                </a>
+                <a
+                  className="github-button"
+                  href="https://streamable.com/c1anv"
+                  target="_blank"
+                  style={{ marginRight: "1rem" }}
+                >
+                  explanation
+                </a>
+                <a
+                  href="https://github.com/zfc9d3f/poll-backend"
                   target="_blank"
                   className="github-button"
                 >
