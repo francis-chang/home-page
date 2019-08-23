@@ -10,58 +10,41 @@ const Statement = () => {
     <div className="section">
       <div className="statement-container">
         <h3>
-          despite academic decline in college, i have regained appreciation for{" "}
-          <span className="higlight">software development</span> in recent years
+          i like <span class="highlight">styled-components</span>
         </h3>
         <h3>
-          my strength is building data visual interfaces using{" "}
-          <span className="higlight">react</span>,{" "}
-          <span className="higlight">typescript</span> and{" "}
-          <span className="higlight">d3</span>, although i consider myself
-          competent with <span className="higlight">css</span> and backend
-          development with <span className="higlight">python</span> as well
+          for animations i use a mixture of{" "}
+          <span class="highlight">css animations</span>,{" "}
+          <span class="highlight">react-spring</span> and
+          <span class="highlight"> d3-transitions</span>
         </h3>
         <h3>
-          my weakness is, even though i read about{" "}
-          <span className="higlight">systems that scale</span>, dealt with
-          caching on <span className="higlight">redis</span> and load balancing
-          with <span className="higlight">nginx</span>, i have minimal
-          experience with scaling
+          i like <span class="highlight">react hooks</span>. i rarely touch{" "}
+          <span class="highlight">class components</span> now.
         </h3>
         <h3>
-          upon employment, i will be learning these technologies; independently,
-          if my work does not require it
+          after using <span class="highlight">sagas</span> for a year, i feel
+          that <span class="highlight">redux</span> over engineers state
+          management and i like using <span class="highlight">useContext</span>{" "}
+          as a global store.
         </h3>
-        <div className="learn-listing">
-          <FontAwesomeIcon icon="chevron-right" className="learning-icon" />
-          <div>
-            building <span className="higlight">performance critical </span>
-            systems with <span className="higlight">rust</span> and{" "}
-            <span className="higlight">graphql</span>
-          </div>
-        </div>
-        <div className="learn-listing">
-          <FontAwesomeIcon icon="chevron-right" className="learning-icon" />
-          <div>
-            strengthen <span className="higlight">css</span> and{" "}
-            <span className="higlight">design</span> skills
-          </div>
-        </div>
-        <div className="learn-listing">
-          <FontAwesomeIcon icon="chevron-right" className="learning-icon" />
-          <div>
-            <span className="higlight">swift</span> for mobile development
-          </div>
-        </div>
-        <div className="learn-listing">
-          <FontAwesomeIcon icon="chevron-right" className="learning-icon" />
-          <div>
-            <span className="higlight">docker</span>
-          </div>
-        </div>
         <h3>
-          i am confident i can transfer my skills to a work environment smoothly
-          and be <span className="higlight">productive immediately</span>
+          i like building animations into my <span class="highlight">d3</span>{" "}
+          visuals
+        </h3>
+        <h3>
+          currently learning <span class="highlight">Scala</span> and{" "}
+          <span class="highlight">Rust</span>
+        </h3>
+        <h3>
+          my favorite color combination is{" "}
+          <span style={{ backgroundColor: "#111", color: "#ffa51f" }}>
+            #ffa51f
+          </span>{" "}
+          and{" "}
+          <span style={{ backgroundColor: "#eee", color: "#06385e" }}>
+            #06385e
+          </span>
         </h3>
       </div>
     </div>

@@ -297,7 +297,7 @@ const Projects = () => {
           <animated.div style={shipmentAnimate}>
             <div className="animation-drop">
               projected flights ontop of d3-geo USA map with information on
-              coordinates, cargo, landing estimates, flight, duration, speed and
+              coordinates, cargo, landing estimates, flight duration, speed, and
               altitude and shipment fulfillment information
               <div className="links-container">
                 <a

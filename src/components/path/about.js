@@ -23,7 +23,7 @@ const About = () => (
       <br />
       <span className="margin" />
       <span className="new">.</span>
-      <span className="func">raisedIn</span>(texas)
+      <span className="func">raisedIn</span>(states.texas)
       <br />
       <span className="margin" />
       <span className="new">.</span>
@@ -64,8 +64,29 @@ const About = () => (
       <br />
       <br />
       zfc9d3f<span className="new">.</span>
-      <span className="func">findEmployment</span>()
-      <span className="new">;</span>
+      <span className="func">setContactInfo</span>(
+      <span className="new">{"{"}</span>
+      <br />
+      <span className="margin" />
+      <span className="margin" />
+      email<span className="new">: "</span>
+      <span className="quotes">zfc9d3f@gmail.com</span>
+      <span className="new">",</span>
+      <br />
+      <span className="margin" />
+      <span className="margin" />
+      phone<span className="new">: "</span>
+      <span className="quotes">(949)247-9276</span>
+      <span className="new">",</span>
+      <br />
+      <span className="margin" />
+      <span className="margin" />
+      github<span className="new">: "</span>
+      <span className="quotes">zfc9d3f</span>
+      <span className="new">",</span>
+      <br />
+      <span className="margin"></span>
+      <span className="new">}</span>)
     </div>
   </div>
 )
