@@ -23,7 +23,7 @@ const Global = createGlobalStyle`
   }
 
   body{
-    background-color: #2a2c33;
+    background-color: #232b36;
     color: #d5d7dd;
   }
 `
@@ -34,6 +34,7 @@ const Container = styled.div`
   font-family: "Ubuntu Mono", sans-serif;
   font-weight: 600;
   margin-bottom: 4rem;
+  margin-top: 5rem;
 `
 const ConContainer = styled.div`
   padding-top: 2rem;
@@ -112,7 +113,7 @@ const Button = styled.button`
   cursor: pointer;
   width: 10rem;
   color: #d5d7dd;
-  background-color: #2a2c33;
+  background-color: #232b36;
   padding: 0.3rem 1rem;
   border-radius: 4px;
   border: 3px solid #d5d7dd;
@@ -199,13 +200,6 @@ const ArtistLink = styled.a`
 `
 
 const IndexPage = () => {
-  const [toggle, setToggle] = useState(false)
-
-  const animatedProps = useSpring({
-    height: toggle ? "26rem" : "0rem",
-    overflow: "hidden",
-  })
-
   return (
     <Container>
       <SEO title="francis chang" />
@@ -217,85 +211,7 @@ const IndexPage = () => {
         <Listing>taiwanese korean american</Listing>
         <Listing>touched down '92 in california, raised in texas</Listing>
         <Listing>i enjoy listening to stephen a and max in the morning</Listing>
-        <Listing>
-          <LastLasting onClick={() => setToggle(!toggle)}>
-            i like these artists
-            <ArrowDown>
-              <FontAwesomeIcon icon="arrow-down"></FontAwesomeIcon>
-            </ArrowDown>
-          </LastLasting>
-          <animated.div style={animatedProps}>
-            <ArtistContainer>
-              <ArtistLink
-                href="https://www.artstation.com/andreasrocha"
-                target="_blank"
-              >
-                andreas rocha
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/awanqi"
-                target="_blank"
-              >
-                aw anqi
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/chingyeh"
-                target="_blank"
-              >
-                ching yeh
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/chunlo"
-                target="_blank"
-              >
-                chun lo
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/gliulian"
-                target="_blank"
-              >
-                g liulian
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/mj_liyongqiang"
-                target="_blank"
-              >
-                mao jin
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.instagram.com/michal_sawtyruk/?hl=en"
-                target="_blank"
-              >
-                michal sawtyruk
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/santella"
-                target="_blank"
-              >
-                n kayurova
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.artstation.com/powl"
-                target="_blank"
-              >
-                pablo hurtado de mendoza
-              </ArtistLink>
-              <ArtistLink
-                href="https://www.instagram.com/sachinteng/?hl=en"
-                target="_blank"
-              >
-                sachin teng
-              </ArtistLink>
 
-              <ArtistLink
-                href="https://www.artstation.com/mayadim1926"
-                target="_blank"
-              >
-                svetlana dmitrieva
-              </ArtistLink>
-            </ArtistContainer>
-          </animated.div>
-        </Listing>
         <ButtonContainer>
           <Button color="#ffc970">
             <Icon color="#bfbfbf">

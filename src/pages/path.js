@@ -17,7 +17,6 @@ const SecondPage = () => (
           <Tech></Tech>
           <Projects></Projects>
           <Statement></Statement>
-          <About />
         </ReactFullpage.Wrapper>
       )
     }}

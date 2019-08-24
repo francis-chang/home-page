@@ -13,7 +13,7 @@ button::-moz-focus-inner {
 }
 
 .section {
-  background-color: #2a2c33;
+  background-color: #232b36;
   color: #d5d7dd;
 }
 
@@ -24,7 +24,7 @@ button::-moz-focus-inner {
 }
 
 .media_button {
-  background-color: #2a2c33;
+  background-color: #232b36;
   color: #d5d7dd;
   border: 5px solid #d5d7dd;
   border-radius: 50%;
@@ -39,12 +39,9 @@ button::-moz-focus-inner {
   cursor: pointer;
 }
 
-.media_button:hover > .fa-icon {
-  color: #ffc970;
-  animation-name: pulsate;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  outline: none;
+.media_button:hover {
+  border: 5px solid #ffc970;
+  transition-duration: 250ms;
 }
 
 @keyframes pulsate {

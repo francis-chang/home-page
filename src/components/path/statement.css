@@ -6,11 +6,12 @@
 }
 h3 {
   font-size: 1.4rem;
-  line-height: 1.7rem;
+  line-height: 2rem;
+  letter-spacing: 1px;
 }
 
 .learn-listing {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-left: 3rem;
   margin-top: 1rem;
 
@@ -72,4 +73,10 @@ h3 {
   .learning-icon {
     font-size: 1rem;
   }
+}
+
+.sepb {
+  height: 1rem;
+  background-color: #d5d7dd;
+  width: 100%;
 }

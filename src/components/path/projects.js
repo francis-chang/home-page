@@ -171,7 +171,7 @@ const Projects = () => {
 
   const pollAnimate = useSpring({
     width: "100%",
-    height: pollToggle ? "9rem" : "0rem",
+    height: pollToggle ? "10rem" : "0rem",
     overflow: "hidden",
   })
   const audioAnimate = useSpring({
@@ -186,7 +186,7 @@ const Projects = () => {
   })
   const instaAnimate = useSpring({
     width: "100%",
-    height: instaToggle ? "14rem" : "0rem",
+    height: instaToggle ? "15rem" : "0rem",
     overflow: "hidden",
   })
   const minervaAnimate = useSpring({
@@ -317,6 +317,32 @@ const Projects = () => {
               </div>
             </div>
           </animated.div>
+          <div name="audio" className="projects-listing" onClick={audioClick}>
+            d3 & css tutorials
+            <FontAwesomeIcon
+              className={
+                audioToggle
+                  ? "arrow-icon arrow-transition-two"
+                  : "arrow-transition arrow-icon"
+              }
+              icon={audioToggle ? "arrow-up" : "arrow-down"}
+            ></FontAwesomeIcon>
+          </div>
+          <animated.div style={audioAnimate}>
+            <div className="animation-drop">
+              i make youtube educationals on d3 and css topics. i mostly make
+              videos on how to integrate d3 to a react and typescript setting.
+              <div className="links-container">
+                <a
+                  href="https://www.youtube.com/channel/UCHtLTNWrpDl_kwy3oOIiy9Q"
+                  target="_blank"
+                  className="github-button"
+                >
+                  youtube
+                </a>
+              </div>
+            </div>
+          </animated.div>
           <div name="clone" className="projects-listing" onClick={instaClick}>
             photoblog platform{" "}
             <FontAwesomeIcon
@@ -328,12 +354,13 @@ const Projects = () => {
               icon={instaToggle ? "arrow-up" : "arrow-down"}
             ></FontAwesomeIcon>
           </div>
+
           <animated.div style={instaAnimate}>
             <div className="animation-drop">
-              built a microservice in Flask, utilizing sendgrid and
+              built a service in flask-RESTful, utilizing sendgrid and
               flask-oauthlib for email authorization handling and oauth
-              connections with github. Utilized styled components and CSS and
-              javascript animations for the UI, And had cloudinary deal with
+              connections with github. utilized styled components and CSS and
+              javascript animations for the UI, and had cloudinary deal with
               image hosting and transformations
               <div className="links-container">
                 <a
@@ -388,40 +415,7 @@ const Projects = () => {
               </div>
             </div>
           </animated.div>
-          <div name="audio" className="projects-listing" onClick={audioClick}>
-            audio visualizer
-            <FontAwesomeIcon
-              className={
-                audioToggle
-                  ? "arrow-icon arrow-transition-two"
-                  : "arrow-transition arrow-icon"
-              }
-              icon={audioToggle ? "arrow-up" : "arrow-down"}
-            ></FontAwesomeIcon>
-          </div>
-          <animated.div style={audioAnimate}>
-            <div className="animation-drop">
-              utilized the web audio api to create analysers that would be fed
-              into d3 to create visualizations in the form of an oscilloscope or
-              frequency.
-              <div className="links-container">
-                <a
-                  href="https://sleepy-swirles-df5525.netlify.com/"
-                  target="_blank"
-                  className="example-button"
-                >
-                  example
-                </a>
-                <a
-                  href="https://github.com/zfc9d3f/d3-music"
-                  target="_blank"
-                  className="github-button"
-                >
-                  github
-                </a>
-              </div>
-            </div>
-          </animated.div>
+
           <div name="poll" className="projects-listing" onClick={pollClick}>
             poll{" "}
             <FontAwesomeIcon
