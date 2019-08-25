@@ -10,7 +10,7 @@ const Statement = () => {
       <div className="statement-container">
         <h3>
           i like <span className="highlight">styled-components</span>,
-          <span className="highlight"> react-spring</span> and{" "}
+          <span className="highlight"> react-spring</span>, and{" "}
           <span className="highlight">postgres</span>
         </h3>
         <h3>
@@ -26,15 +26,16 @@ const Statement = () => {
           <span className="highlight"> useCallback</span> for a global store
         </h3>
         <h3>
-          i think learning <span className="highlight">swift/kotlin</span> or{" "}
+          i think learning{" "}
+          <span className="highlight">swift/kotlin/react-native</span> or{" "}
           <span className="highlight">keplergl</span> would be fun
         </h3>
         <h3>
-          currently looking for a UI role using{" "}
-          <span className="highlight">react</span> and{" "}
-          <span className="highlight">d3</span> or a fullstack role with{" "}
-          <span className="highlight">python</span> and{" "}
-          <span className="highlight">typescript</span>
+          currently looking for a <span className="highlight">ui</span> or{" "}
+          <span className="highlight">fullstack</span> role using any of these
+          technologies - <span className="highlight">react</span>,{" "}
+          <span className="highlight">d3</span> or{" "}
+          <span className="highlight">python</span>
         </h3>
         <h3>Asking for</h3>
         <div className="learn-listing">
@@ -49,7 +50,7 @@ const Statement = () => {
             {" "}
             $130k
           </span>
-          San Jose / Seattle / Bellevue
+          San Jose / Seattle
         </div>
         <div className="learn-listing">
           <span style={{ marginRight: "1rem" }} className="highlight">
@@ -65,8 +66,9 @@ const Statement = () => {
           </span>{" "}
           Remote
         </div>
-
-        <h2>francis chang - zfc9d3f@gmail.com - (949)247-9276</h2>
+        <a href="http://zfc9d3f.com/">
+          <h3 className="gohome">francis chang - zfc9d3f</h3>
+        </a>
       </div>
     </div>
   )

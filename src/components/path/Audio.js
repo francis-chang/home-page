@@ -2,7 +2,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useRef, useState } from "react"
-import audio from "../../audio/make.mp3"
+import audio from "../../audio/another.mp3"
 import "./path.css"
 import WaveForm from "./WaveForm"
 
@@ -31,10 +31,14 @@ const Audio = ({ fullpageApi }) => {
       initializeAudio()
       setAudioSet(true)
       audioRef.current.volume = 0.5
+      audioRef.current.play()
+      setPlaying(true)
+      interval = window.setInterval(turnToTime, 1000)
+    } else {
+      audioRef.current.play()
+      setPlaying(true)
+      interval = window.setInterval(turnToTime, 1000)
     }
-    audioRef.current.play()
-    setPlaying(true)
-    interval = window.setInterval(turnToTime, 1000)
   }
 
   const pause = () => {
@@ -66,7 +70,7 @@ const Audio = ({ fullpageApi }) => {
     <div className="section">
       <div className="container">
         <div className="item_container">
-          <div className="time">{currentTime}</div>
+          <div className="time">{currentTime} / 0:31</div>
           <audio
             data-keepplaying
             ref={audioRef}

@@ -140,20 +140,16 @@ const Tech = () => {
     height: jsToggle
       ? window.innerWidth > 800
         ? "14.5rem"
-        : "11.5rem"
+        : "14.5rem"
       : "0rem",
     overflow: "hidden",
   })
   const rAnimate = useSpring({
-    height: rToggle
-      ? window.innerWidth > 800
-        ? "16.5rem"
-        : "13.5rem"
-      : "0rem",
+    height: rToggle ? (window.innerWidth > 800 ? "16.5rem" : "16rem") : "0rem",
     overflow: "hidden",
   })
   const pAnimate = useSpring({
-    height: pToggle ? (window.innerWidth > 800 ? "15rem" : "12.3rem") : "0rem",
+    height: pToggle ? (window.innerWidth > 800 ? "15rem" : "14rem") : "0rem",
     overflow: "hidden",
   })
   const cAnimate = useSpring({

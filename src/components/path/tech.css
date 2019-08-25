@@ -10,6 +10,7 @@
   height: 90%;
   padding-top: 5rem;
   user-select: none;
+  margin-top: 3rem;
 }
 
 .title {
@@ -99,22 +100,23 @@
   .tech-container {
     width: 90%;
     height: 100%;
-    padding-top: 1rem;
+    padding-top: 0rem;
+    margin-top: 0.5rem;
   }
 
   .accordion-head {
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: 80%;
     margin: 0 auto;
   }
   .tech-listing {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     width: 65%;
     margin: 0 auto;
   }
   .color-container {
     width: 100%;
     max-width: 400px;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

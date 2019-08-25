@@ -59,6 +59,9 @@ const Projects = () => {
     if (window && window.innerWidth < 800) {
       setWidth(window.innerWidth)
     }
+    if (window && window.innerWidth < 650) {
+      setHeight(150)
+    }
     const resize = () => {
       if (interval) {
         clearInterval(interval)
@@ -69,6 +72,11 @@ const Projects = () => {
       } else {
         setWidth(window.innerWidth * 0.8)
         setRen(true)
+      }
+      if (window.innerWidth < 650) {
+        setHeight(150)
+      } else {
+        setHeight(200)
       }
     }
     if (!selection) {
@@ -303,6 +311,7 @@ const Projects = () => {
                 <a
                   href="https://distracted-wozniak-3a4b78.netlify.com/tracking"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="example-button"
                 >
                   example
@@ -310,6 +319,7 @@ const Projects = () => {
                 <a
                   href="https://github.com/zfc9d3f/dashboard-fin"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="github-button"
                 >
                   github
@@ -336,6 +346,7 @@ const Projects = () => {
                 <a
                   href="https://www.youtube.com/channel/UCHtLTNWrpDl_kwy3oOIiy9Q"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="github-button"
                 >
                   youtube
@@ -367,6 +378,7 @@ const Projects = () => {
                   className="github-button"
                   href="https://vimeo.com/350891768"
                   target="_blank"
+                  rel="noopener noreferrer"
                   style={{ marginRight: "1rem" }}
                 >
                   explanation
@@ -374,6 +386,7 @@ const Projects = () => {
                 <a
                   href="https://github.com/zfc9d3f/bettergram-front"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="github-button"
                 >
                   github
@@ -401,6 +414,7 @@ const Projects = () => {
                 <a
                   href="https://ecstatic-einstein-2f00b4.netlify.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="example-button"
                 >
                   example
@@ -408,6 +422,7 @@ const Projects = () => {
                 <a
                   href="https://github.com/zfc9d3f/minerva-health-cra"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="github-button"
                 >
                   github
@@ -429,20 +444,14 @@ const Projects = () => {
           </div>
           <animated.div style={pollAnimate}>
             <div className="animation-drop">
-              A platform built with Flask-Restful and Postgres with React and D3
+              a platform built with flask-restful and postgres with react and d3
               for bar charts where users can sign up and poll or vote.
               <div className="links-container">
-                <a
-                  href="https://poll-c4248.firebaseapp.com/"
-                  target="_blank"
-                  className="example-button"
-                >
-                  example
-                </a>
                 <a
                   className="github-button"
                   href="https://streamable.com/c1anv"
                   target="_blank"
+                  rel="noopener noreferrer"
                   style={{ marginRight: "1rem" }}
                 >
                   explanation
@@ -450,6 +459,7 @@ const Projects = () => {
                 <a
                   href="https://github.com/zfc9d3f/poll-backend"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="github-button"
                 >
                   github

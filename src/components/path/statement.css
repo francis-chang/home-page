@@ -28,6 +28,32 @@ h3 {
   font-size: 1.5rem;
 }
 
+a,
+a:visited,
+a:active {
+  color: #ffc970;
+  text-decoration: none;
+}
+
+.gohome {
+  padding: 0.5rem;
+  border: 3px solid #ffc970;
+  border-radius: 4px;
+  width: 300px;
+  text-align: center;
+}
+
+.gohome:hover {
+  background-color: #ffc970;
+  color: #232b36;
+}
+
+.sepb {
+  height: 1rem;
+  background-color: #d5d7dd;
+  width: 100%;
+}
+
 @media only screen and (max-width: 1300px) {
   h3 {
     font-size: 1.2rem;
@@ -50,6 +76,7 @@ h3 {
   }
   .learn-listing {
     font-size: 1rem;
+    margin-top: 0.7rem;
   }
   .statement-container {
     width: 70%;
@@ -62,21 +89,15 @@ h3 {
 @media only screen and (max-width: 700px) {
   h3 {
     font-size: 1rem;
-    line-height: 1.3rem;
+    line-height: 1.1rem;
   }
   .learn-listing {
     font-size: 1rem;
   }
   .statement-container {
-    width: 85%;
+    width: 90%;
   }
   .learning-icon {
     font-size: 1rem;
   }
-}
-
-.sepb {
-  height: 1rem;
-  background-color: #d5d7dd;
-  width: 100%;
 }

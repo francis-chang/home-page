@@ -68,9 +68,10 @@ h3 {
   }
   .listing {
     font-size: 0.9rem;
-    line-height: 1.2rem;
+    line-height: 1rem;
   }
   .experience-list-container {
+    margin-top: 0.5rem;
     width: 95%;
   }
   .line-chart {

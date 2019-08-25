@@ -6,8 +6,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useState } from "react"
-import { animated, useSpring } from "react-spring"
+import React from "react"
+
 import styled, { createGlobalStyle } from "styled-components"
 import SEO from "../components/seo"
 
@@ -89,26 +89,6 @@ const Listing = styled.div`
   }
 `
 
-const LastLasting = styled.div`
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: center;
-
-  &:hover > .arrow {
-    color: #ffc970;
-  }
-  @media only screen and (max-width: 800px) {
-    justify-content: center;
-  }
-`
-
-const ArrowDown = styled.div`
-  font-size: 1.3rem;
-  padding-left: 0.8rem;
-  /* color: #ffc970; */
-`
-
 const Button = styled.button`
   cursor: pointer;
   width: 10rem;
@@ -176,28 +156,10 @@ const Icon = styled.div`
   }
 `
 
-const ArtistContainer = styled.div`
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-`
-
-const ArtistLink = styled.a`
-  cursor: pointer;
-  padding: 0.5rem;
-  text-decoration: none;
-  outline: none;
-  &:active,
-  &:visited,
-  &:link {
-    color: #d5d7dd;
-  }
-  &:hover {
-    color: #ffc970;
-    text-decoration: underline;
-    transition-duration: 250ms;
-  }
-`
+const onClick = site => {
+  console.log(site)
+  window.open(site, "_blank")
+}
 
 const IndexPage = () => {
   return (
@@ -213,19 +175,32 @@ const IndexPage = () => {
         <Listing>i enjoy listening to stephen a and max in the morning</Listing>
 
         <ButtonContainer>
-          <Button color="#ffc970">
+          <Button
+            color="#ffc970"
+            onClick={() => onClick("http://github.com/zfc9d3f")}
+          >
             <Icon color="#bfbfbf">
               <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
             </Icon>
             <ButtonText>github</ButtonText>
           </Button>
-          <Button color="#ffc970">
+          <Button
+            color="#ffc970"
+            onClick={() => onClick("http://twitter.com/zfc9d3f")}
+          >
             <Icon color="#1dcaff">
               <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
             </Icon>
             <ButtonText>twitter</ButtonText>
           </Button>
-          <Button color="#ffc970">
+          <Button
+            color="#ffc970"
+            onClick={() =>
+              onClick(
+                "https://www.youtube.com/channel/UCHtLTNWrpDl_kwy3oOIiy9Q"
+              )
+            }
+          >
             <Icon color="#ff3333">
               <FontAwesomeIcon icon={["fab", "youtube"]}></FontAwesomeIcon>
             </Icon>

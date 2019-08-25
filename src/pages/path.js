@@ -1,6 +1,5 @@
 import ReactFullpage from "@fullpage/react-fullpage"
 import React from "react"
-import About from "../components/path/about"
 import Audio from "../components/path/Audio"
 import Experience from "../components/path/Experience"
 import Projects from "../components/path/projects"

@@ -18,7 +18,9 @@ class WaveForm extends React.Component {
   }
 
   componentDidMount() {
+    this.resizeWidth()
     window.addEventListener("resize", this.resizeWidth)
+
     this.createAudio()
   }
 
@@ -40,7 +42,7 @@ class WaveForm extends React.Component {
       .range([0, this.state.width])
 
     let yScale = scaleLinear()
-      .domain([-1, 1])
+      .domain([-0.2, 0.2])
       .range([200, 0])
 
     let musicline = line()
