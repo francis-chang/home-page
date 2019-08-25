@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useRef, useState } from "react"
 import audio from "../../audio/another.mp3"
 import "./path.css"
+import { AudioContext } from "standardized-audio-context"
 import WaveForm from "./WaveForm"
 
 library.add(faPlay, faPause)
