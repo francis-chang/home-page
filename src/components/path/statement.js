@@ -37,35 +37,11 @@ const Statement = () => {
           <span className="highlight">d3</span> or{" "}
           <span className="highlight">python</span>
         </h3>
-        <h3>Asking for</h3>
-        <div className="learn-listing">
-          <span style={{ marginRight: "1rem" }} className="highlight">
-            {" "}
-            $140k
-          </span>
-          San Francisco
-        </div>
-        <div className="learn-listing">
-          <span style={{ marginRight: "1rem" }} className="highlight">
-            {" "}
-            $130k
-          </span>
-          San Jose / Seattle
-        </div>
-        <div className="learn-listing">
-          <span style={{ marginRight: "1rem" }} className="highlight">
-            {" "}
-            $120k
-          </span>
-          Los Angeles
-        </div>
-        <div className="learn-listing">
-          <span className="highlight" style={{ marginRight: "1rem" }}>
-            {" "}
-            $100k
-          </span>{" "}
-          Remote
-        </div>
+        <h3>
+          located in <span className="highlight">los angeles</span>, open for{" "}
+          <span className="highlight">relocation / remote</span>
+        </h3>
+
         <a href="http://zfc9d3f.com/">
           <h3 className="gohome">francis chang - zfc9d3f</h3>
         </a>
